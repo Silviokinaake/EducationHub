@@ -10,8 +10,8 @@ namespace EducationHub.Faturamento.Data
         public FaturamentoContext(DbContextOptions options)
             : base(options) { }
 
-        public DbSet<Pagamento> Cursos { get; set; }
-        public DbSet<DadosCartao> Aulas { get; set; }
+        public DbSet<Pagamento> Pagamento { get; set; }
+        public DbSet<DadosCartao> DadosCartao { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

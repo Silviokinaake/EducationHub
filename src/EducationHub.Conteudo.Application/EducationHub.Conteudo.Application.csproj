@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="automapper" Version="15.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\EducationHub.Conteudo.Data\EducationHub.Conteudo.Data.csproj" />
+    <ProjectReference Include="..\EducationHub.Conteudo.Domain\EducationHub.Conteudo.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

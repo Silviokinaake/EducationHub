@@ -40,8 +40,6 @@ namespace EducationHub.Faturamento.Domain.Entidades
 
             Status = StatusPagamentoEnum.Confirmado;
             DataPagamento = DateTime.UtcNow;
-
-            // Aqui você poderia disparar um evento de domínio (ex: PagamentoConfirmadoEvent)
         }
 
         public void Rejeitar(string motivo)
@@ -50,7 +48,6 @@ namespace EducationHub.Faturamento.Domain.Entidades
                 throw new DomainException("O pagamento já foi rejeitado.");
 
             Status = StatusPagamentoEnum.Rejeitado;
-            // Pode armazenar log/motivo no evento de rejeição
         }
 
         public override string ToString()
