@@ -1,0 +1,79 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36310.24
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebApps", "WebApps", "{7D953FDC-3C8E-49DD-A775-8D448803E7DC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Alunos", "Alunos", "{9A40C823-2F74-48BF-A165-F0C9A67108B1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Faturamento", "Faturamento", "{5128010C-C3B9-42CB-8B6A-3241C0F27FE5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{DB2CAC9B-11DD-41D0-BB76-6EC1427655E3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Conteudo", "Conteudo", "{FA446B18-A877-4649-BC8D-2627814FD0BB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EducationHub.Conteudo.Domain", "src\EducationHub.Conteudo.Domain\EducationHub.Conteudo.Domain.csproj", "{DCD2D431-C52A-4469-9DC9-895BF68AE9C3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EducationHub.Core", "src\EducationHub.Core\EducationHub.Core.csproj", "{6929B114-4EA8-4462-9CFF-6604219353E7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EducationHub.Alunos.Domain", "src\EducationHub.Alunos.Domain\EducationHub.Alunos.Domain.csproj", "{30B24309-B110-4CBF-A5A1-305356A2C899}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EducationHub.Faturamento.Domain", "src\EducationHub.Faturamento.Domain\EducationHub.Faturamento.Domain.csproj", "{8997B809-0F4B-48DF-A506-80C3072DAC79}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EducationHub.Conteudo.Data", "src\EducationHub.Conteudo.Data\EducationHub.Conteudo.Data.csproj", "{76B74533-90DC-4926-A8D9-6619AEE21B1B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EducationHub.Faturamento.Data", "src\EducationHub.Faturamento.Data\EducationHub.Faturamento.Data.csproj", "{54D20E51-A207-4A71-9EC0-3D1DC85C8639}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DCD2D431-C52A-4469-9DC9-895BF68AE9C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCD2D431-C52A-4469-9DC9-895BF68AE9C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCD2D431-C52A-4469-9DC9-895BF68AE9C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCD2D431-C52A-4469-9DC9-895BF68AE9C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6929B114-4EA8-4462-9CFF-6604219353E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6929B114-4EA8-4462-9CFF-6604219353E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6929B114-4EA8-4462-9CFF-6604219353E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6929B114-4EA8-4462-9CFF-6604219353E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30B24309-B110-4CBF-A5A1-305356A2C899}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30B24309-B110-4CBF-A5A1-305356A2C899}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30B24309-B110-4CBF-A5A1-305356A2C899}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30B24309-B110-4CBF-A5A1-305356A2C899}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8997B809-0F4B-48DF-A506-80C3072DAC79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8997B809-0F4B-48DF-A506-80C3072DAC79}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8997B809-0F4B-48DF-A506-80C3072DAC79}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8997B809-0F4B-48DF-A506-80C3072DAC79}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76B74533-90DC-4926-A8D9-6619AEE21B1B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76B74533-90DC-4926-A8D9-6619AEE21B1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76B74533-90DC-4926-A8D9-6619AEE21B1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76B74533-90DC-4926-A8D9-6619AEE21B1B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54D20E51-A207-4A71-9EC0-3D1DC85C8639}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54D20E51-A207-4A71-9EC0-3D1DC85C8639}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54D20E51-A207-4A71-9EC0-3D1DC85C8639}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54D20E51-A207-4A71-9EC0-3D1DC85C8639}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{9A40C823-2F74-48BF-A165-F0C9A67108B1} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{5128010C-C3B9-42CB-8B6A-3241C0F27FE5} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{DB2CAC9B-11DD-41D0-BB76-6EC1427655E3} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{FA446B18-A877-4649-BC8D-2627814FD0BB} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{DCD2D431-C52A-4469-9DC9-895BF68AE9C3} = {FA446B18-A877-4649-BC8D-2627814FD0BB}
+		{6929B114-4EA8-4462-9CFF-6604219353E7} = {DB2CAC9B-11DD-41D0-BB76-6EC1427655E3}
+		{30B24309-B110-4CBF-A5A1-305356A2C899} = {9A40C823-2F74-48BF-A165-F0C9A67108B1}
+		{8997B809-0F4B-48DF-A506-80C3072DAC79} = {5128010C-C3B9-42CB-8B6A-3241C0F27FE5}
+		{76B74533-90DC-4926-A8D9-6619AEE21B1B} = {FA446B18-A877-4649-BC8D-2627814FD0BB}
+		{54D20E51-A207-4A71-9EC0-3D1DC85C8639} = {5128010C-C3B9-42CB-8B6A-3241C0F27FE5}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {54B94843-EB4B-4CD5-9695-667DFA6DB600}
+	EndGlobalSection
+EndGlobal

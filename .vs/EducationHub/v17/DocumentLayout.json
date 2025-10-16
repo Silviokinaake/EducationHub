@@ -1,0 +1,54 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Git\\MBA_Entrega_Modulo_3\\EducationHub\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{54D20E51-A207-4A71-9EC0-3D1DC85C8639}|src\\EducationHub.Faturamento.Data\\EducationHub.Faturamento.Data.csproj|c:\\git\\mba_entrega_modulo_3\\educationhub\\src\\educationhub.faturamento.data\\faturamentocontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{54D20E51-A207-4A71-9EC0-3D1DC85C8639}|src\\EducationHub.Faturamento.Data\\EducationHub.Faturamento.Data.csproj|solutionrelative:src\\educationhub.faturamento.data\\faturamentocontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{76B74533-90DC-4926-A8D9-6619AEE21B1B}|src\\EducationHub.Conteudo.Data\\EducationHub.Conteudo.Data.csproj|c:\\git\\mba_entrega_modulo_3\\educationhub\\src\\educationhub.conteudo.data\\mappings\\cursomapping.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{76B74533-90DC-4926-A8D9-6619AEE21B1B}|src\\EducationHub.Conteudo.Data\\EducationHub.Conteudo.Data.csproj|solutionrelative:src\\educationhub.conteudo.data\\mappings\\cursomapping.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "FaturamentoContext.cs",
+              "DocumentMoniker": "C:\\Git\\MBA_Entrega_Modulo_3\\EducationHub\\src\\EducationHub.Faturamento.Data\\FaturamentoContext.cs",
+              "RelativeDocumentMoniker": "src\\EducationHub.Faturamento.Data\\FaturamentoContext.cs",
+              "ToolTip": "C:\\Git\\MBA_Entrega_Modulo_3\\EducationHub\\src\\EducationHub.Faturamento.Data\\FaturamentoContext.cs",
+              "RelativeToolTip": "src\\EducationHub.Faturamento.Data\\FaturamentoContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAABSAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-14T03:57:35.451Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CursoMapping.cs",
+              "DocumentMoniker": "C:\\Git\\MBA_Entrega_Modulo_3\\EducationHub\\src\\EducationHub.Conteudo.Data\\Mappings\\CursoMapping.cs",
+              "RelativeDocumentMoniker": "src\\EducationHub.Conteudo.Data\\Mappings\\CursoMapping.cs",
+              "ToolTip": "C:\\Git\\MBA_Entrega_Modulo_3\\EducationHub\\src\\EducationHub.Conteudo.Data\\Mappings\\CursoMapping.cs",
+              "RelativeToolTip": "src\\EducationHub.Conteudo.Data\\Mappings\\CursoMapping.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-14T02:09:42.039Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
