@@ -1,0 +1,16 @@
+C:\Git\MBA_Entrega_Modulo_3\EducationHub\src\EducationHub.Conteudo.Domain\bin\Debug\net8.0\EducationHub.Conteudo.Domain.deps.json
+C:\Git\MBA_Entrega_Modulo_3\EducationHub\src\EducationHub.Conteudo.Domain\bin\Debug\net8.0\EducationHub.Conteudo.Domain.dll
+C:\Git\MBA_Entrega_Modulo_3\EducationHub\src\EducationHub.Conteudo.Domain\bin\Debug\net8.0\EducationHub.Conteudo.Domain.pdb
+C:\Git\MBA_Entrega_Modulo_3\EducationHub\src\EducationHub.Conteudo.Domain\bin\Debug\net8.0\EducationHub.Core.dll
+C:\Git\MBA_Entrega_Modulo_3\EducationHub\src\EducationHub.Conteudo.Domain\bin\Debug\net8.0\EducationHub.Core.pdb
+C:\Git\MBA_Entrega_Modulo_3\EducationHub\src\EducationHub.Conteudo.Domain\obj\Debug\net8.0\EducationHub.Conteudo.Domain.csproj.AssemblyReference.cache
+C:\Git\MBA_Entrega_Modulo_3\EducationHub\src\EducationHub.Conteudo.Domain\obj\Debug\net8.0\EducationHub.Conteudo.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Git\MBA_Entrega_Modulo_3\EducationHub\src\EducationHub.Conteudo.Domain\obj\Debug\net8.0\EducationHub.Conteudo.Domain.AssemblyInfoInputs.cache
+C:\Git\MBA_Entrega_Modulo_3\EducationHub\src\EducationHub.Conteudo.Domain\obj\Debug\net8.0\EducationHub.Conteudo.Domain.AssemblyInfo.cs
+C:\Git\MBA_Entrega_Modulo_3\EducationHub\src\EducationHub.Conteudo.Domain\obj\Debug\net8.0\EducationHub.Conteudo.Domain.csproj.CoreCompileInputs.cache
+C:\Git\MBA_Entrega_Modulo_3\EducationHub\src\EducationHub.Conteudo.Domain\obj\Debug\net8.0\EducationHub.Conteudo.Domain.sourcelink.json
+C:\Git\MBA_Entrega_Modulo_3\EducationHub\src\EducationHub.Conteudo.Domain\obj\Debug\net8.0\Educatio.948E3CF5.Up2Date
+C:\Git\MBA_Entrega_Modulo_3\EducationHub\src\EducationHub.Conteudo.Domain\obj\Debug\net8.0\EducationHub.Conteudo.Domain.dll
+C:\Git\MBA_Entrega_Modulo_3\EducationHub\src\EducationHub.Conteudo.Domain\obj\Debug\net8.0\refint\EducationHub.Conteudo.Domain.dll
+C:\Git\MBA_Entrega_Modulo_3\EducationHub\src\EducationHub.Conteudo.Domain\obj\Debug\net8.0\EducationHub.Conteudo.Domain.pdb
+C:\Git\MBA_Entrega_Modulo_3\EducationHub\src\EducationHub.Conteudo.Domain\obj\Debug\net8.0\ref\EducationHub.Conteudo.Domain.dll

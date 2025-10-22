@@ -4,9 +4,9 @@ namespace EducationHub.Conteudo.Application.Services
 {
     public interface ICursoAppService : IDisposable
     {
-        Task<IEnumerable<CursoViewModel>> ObterTodos();
-        Task<CursoViewModel> ObterPorId(Guid id);
-        Task Adicionar(CursoViewModel cursoViewModel);
-        Task Atualizar(CursoViewModel cursoViewModel);
+        Task<IEnumerable<CursoViewModel>> ObterTodosAsync();
+        Task<CursoViewModel> ObterPorIdAsync(Guid id);
+        Task AdicionarAsync(CursoViewModel cursoViewModel);
+        Task AtualizarAsync(CursoViewModel cursoViewModel);
     }
 }

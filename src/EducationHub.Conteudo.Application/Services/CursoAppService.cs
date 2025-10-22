@@ -16,19 +16,19 @@ namespace EducationHub.Conteudo.Application.Services
             _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
         }
 
-        public async Task<CursoViewModel> ObterPorId(Guid id)
+        public async Task<CursoViewModel> ObterPorIdAsync(Guid id)
         {
             var curso = await _cursoRepositorio.ObterPorIdAsync(id);
             return _mapper.Map<CursoViewModel>(curso);
         }
 
-        public async Task<IEnumerable<CursoViewModel>> ObterTodos()
+        public async Task<IEnumerable<CursoViewModel>> ObterTodosAsync()
         {
             var cursos = await _cursoRepositorio.ObterTodosAsync();
             return _mapper.Map<IEnumerable<CursoViewModel>>(cursos);
         }
 
-        public async Task Adicionar(CursoViewModel cursoViewModel)
+        public async Task AdicionarAsync(CursoViewModel cursoViewModel)
         {
             if (cursoViewModel is null) throw new ArgumentNullException(nameof(cursoViewModel));
 
@@ -40,7 +40,7 @@ namespace EducationHub.Conteudo.Application.Services
                 throw new InvalidOperationException("Não foi possível persistir o novo curso.");
         }
 
-        public async Task Atualizar(CursoViewModel cursoViewModel)
+        public async Task AtualizarAsync(CursoViewModel cursoViewModel)
         {
             if (cursoViewModel is null) throw new ArgumentNullException(nameof(cursoViewModel));
 

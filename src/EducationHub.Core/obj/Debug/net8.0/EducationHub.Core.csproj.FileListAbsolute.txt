@@ -1,0 +1,12 @@
+C:\Git\MBA_Entrega_Modulo_3\EducationHub\src\EducationHub.Core\bin\Debug\net8.0\EducationHub.Core.deps.json
+C:\Git\MBA_Entrega_Modulo_3\EducationHub\src\EducationHub.Core\bin\Debug\net8.0\EducationHub.Core.dll
+C:\Git\MBA_Entrega_Modulo_3\EducationHub\src\EducationHub.Core\bin\Debug\net8.0\EducationHub.Core.pdb
+C:\Git\MBA_Entrega_Modulo_3\EducationHub\src\EducationHub.Core\obj\Debug\net8.0\EducationHub.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Git\MBA_Entrega_Modulo_3\EducationHub\src\EducationHub.Core\obj\Debug\net8.0\EducationHub.Core.AssemblyInfoInputs.cache
+C:\Git\MBA_Entrega_Modulo_3\EducationHub\src\EducationHub.Core\obj\Debug\net8.0\EducationHub.Core.AssemblyInfo.cs
+C:\Git\MBA_Entrega_Modulo_3\EducationHub\src\EducationHub.Core\obj\Debug\net8.0\EducationHub.Core.csproj.CoreCompileInputs.cache
+C:\Git\MBA_Entrega_Modulo_3\EducationHub\src\EducationHub.Core\obj\Debug\net8.0\EducationHub.Core.sourcelink.json
+C:\Git\MBA_Entrega_Modulo_3\EducationHub\src\EducationHub.Core\obj\Debug\net8.0\EducationHub.Core.dll
+C:\Git\MBA_Entrega_Modulo_3\EducationHub\src\EducationHub.Core\obj\Debug\net8.0\refint\EducationHub.Core.dll
+C:\Git\MBA_Entrega_Modulo_3\EducationHub\src\EducationHub.Core\obj\Debug\net8.0\EducationHub.Core.pdb
+C:\Git\MBA_Entrega_Modulo_3\EducationHub\src\EducationHub.Core\obj\Debug\net8.0\ref\EducationHub.Core.dll

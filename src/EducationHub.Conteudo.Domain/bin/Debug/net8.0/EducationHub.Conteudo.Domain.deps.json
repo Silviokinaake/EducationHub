@@ -1,0 +1,39 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "EducationHub.Conteudo.Domain/1.0.0": {
+        "dependencies": {
+          "EducationHub.Core": "1.0.0"
+        },
+        "runtime": {
+          "EducationHub.Conteudo.Domain.dll": {}
+        }
+      },
+      "EducationHub.Core/1.0.0": {
+        "runtime": {
+          "EducationHub.Core.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "EducationHub.Conteudo.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "EducationHub.Core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

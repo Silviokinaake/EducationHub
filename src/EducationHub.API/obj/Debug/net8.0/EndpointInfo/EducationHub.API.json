@@ -1,0 +1,208 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "EducationHub.API",
+    "version": "1.0"
+  },
+  "paths": {
+    "/api/Cursos": {
+      "get": {
+        "tags": [
+          "Cursos"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Cursos"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CursoViewModel"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CursoViewModel"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CursoViewModel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Cursos/{id}": {
+      "get": {
+        "tags": [
+          "Cursos"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Cursos"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CursoViewModel"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CursoViewModel"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CursoViewModel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "AulaViewModel": {
+        "type": "object",
+        "additionalProperties": false
+      },
+      "ConteudoProgramaticoViewModel": {
+        "required": [
+          "conteudo",
+          "objetivo"
+        ],
+        "type": "object",
+        "properties": {
+          "objetivo": {
+            "maxLength": 250,
+            "minLength": 3,
+            "type": "string"
+          },
+          "conteudo": {
+            "maxLength": 1000,
+            "minLength": 10,
+            "type": "string"
+          },
+          "metodologia": {
+            "maxLength": 500,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "bibliografia": {
+            "maxLength": 500,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CursoViewModel": {
+        "required": [
+          "cargaHoraria",
+          "conteudoProgramatico",
+          "descricao",
+          "instrutor",
+          "nivel",
+          "titulo"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "titulo": {
+            "maxLength": 250,
+            "minLength": 3,
+            "type": "string"
+          },
+          "descricao": {
+            "maxLength": 500,
+            "minLength": 10,
+            "type": "string"
+          },
+          "cargaHoraria": {
+            "type": "string",
+            "format": "date-span"
+          },
+          "instrutor": {
+            "maxLength": 100,
+            "minLength": 3,
+            "type": "string"
+          },
+          "ativo": {
+            "type": "boolean"
+          },
+          "nivel": {
+            "maxLength": 50,
+            "minLength": 3,
+            "type": "string"
+          },
+          "conteudoProgramatico": {
+            "$ref": "#/components/schemas/ConteudoProgramaticoViewModel"
+          },
+          "aulas": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AulaViewModel"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+C:\Git\MBA_Entrega_Modulo_3\EducationHub\src\EducationHub.Alunos.Domain\bin\Debug\net8.0\EducationHub.Alunos.Domain.deps.json
+C:\Git\MBA_Entrega_Modulo_3\EducationHub\src\EducationHub.Alunos.Domain\bin\Debug\net8.0\EducationHub.Alunos.Domain.dll
+C:\Git\MBA_Entrega_Modulo_3\EducationHub\src\EducationHub.Alunos.Domain\bin\Debug\net8.0\EducationHub.Alunos.Domain.pdb
+C:\Git\MBA_Entrega_Modulo_3\EducationHub\src\EducationHub.Alunos.Domain\bin\Debug\net8.0\EducationHub.Core.dll
+C:\Git\MBA_Entrega_Modulo_3\EducationHub\src\EducationHub.Alunos.Domain\bin\Debug\net8.0\EducationHub.Core.pdb
+C:\Git\MBA_Entrega_Modulo_3\EducationHub\src\EducationHub.Alunos.Domain\obj\Debug\net8.0\EducationHub.Alunos.Domain.csproj.AssemblyReference.cache
+C:\Git\MBA_Entrega_Modulo_3\EducationHub\src\EducationHub.Alunos.Domain\obj\Debug\net8.0\EducationHub.Alunos.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Git\MBA_Entrega_Modulo_3\EducationHub\src\EducationHub.Alunos.Domain\obj\Debug\net8.0\EducationHub.Alunos.Domain.AssemblyInfoInputs.cache
+C:\Git\MBA_Entrega_Modulo_3\EducationHub\src\EducationHub.Alunos.Domain\obj\Debug\net8.0\EducationHub.Alunos.Domain.AssemblyInfo.cs
+C:\Git\MBA_Entrega_Modulo_3\EducationHub\src\EducationHub.Alunos.Domain\obj\Debug\net8.0\EducationHub.Alunos.Domain.csproj.CoreCompileInputs.cache
+C:\Git\MBA_Entrega_Modulo_3\EducationHub\src\EducationHub.Alunos.Domain\obj\Debug\net8.0\EducationHub.Alunos.Domain.sourcelink.json
+C:\Git\MBA_Entrega_Modulo_3\EducationHub\src\EducationHub.Alunos.Domain\obj\Debug\net8.0\Educatio.EB09EEED.Up2Date
+C:\Git\MBA_Entrega_Modulo_3\EducationHub\src\EducationHub.Alunos.Domain\obj\Debug\net8.0\EducationHub.Alunos.Domain.dll
+C:\Git\MBA_Entrega_Modulo_3\EducationHub\src\EducationHub.Alunos.Domain\obj\Debug\net8.0\refint\EducationHub.Alunos.Domain.dll
+C:\Git\MBA_Entrega_Modulo_3\EducationHub\src\EducationHub.Alunos.Domain\obj\Debug\net8.0\EducationHub.Alunos.Domain.pdb
+C:\Git\MBA_Entrega_Modulo_3\EducationHub\src\EducationHub.Alunos.Domain\obj\Debug\net8.0\ref\EducationHub.Alunos.Domain.dll
