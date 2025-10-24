@@ -5,6 +5,124 @@
     "version": "1.0"
   },
   "paths": {
+    "/api/Aulas/{id}": {
+      "get": {
+        "tags": [
+          "Aulas"
+        ],
+        "operationId": "GetAulaById",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Aulas"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AulaViewModel"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AulaViewModel"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/AulaViewModel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Aulas/curso/{cursoId}": {
+      "get": {
+        "tags": [
+          "Aulas"
+        ],
+        "parameters": [
+          {
+            "name": "cursoId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Aulas": {
+      "post": {
+        "tags": [
+          "Aulas"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AulaViewModel"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AulaViewModel"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/AulaViewModel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Cursos": {
       "get": {
         "tags": [
@@ -113,7 +231,43 @@
   "components": {
     "schemas": {
       "AulaViewModel": {
+        "required": [
+          "conteudoAula",
+          "cursoId",
+          "duracao",
+          "titulo"
+        ],
         "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "cursoId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "titulo": {
+            "maxLength": 150,
+            "minLength": 3,
+            "type": "string"
+          },
+          "conteudoAula": {
+            "maxLength": 5000,
+            "minLength": 10,
+            "type": "string"
+          },
+          "materialDeApoio": {
+            "maxLength": 1000,
+            "minLength": 5,
+            "type": "string",
+            "nullable": true
+          },
+          "duracao": {
+            "type": "string",
+            "format": "date-span"
+          }
+        },
         "additionalProperties": false
       },
       "ConteudoProgramaticoViewModel": {

@@ -1,7 +1,77 @@
 [
   {
+    "ContainingType": "EducationHub.API.Controllers.AulasController",
+    "Method": "AdicionarAulaAsync",
+    "RelativePath": "api/Aulas",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "aulaViewModel",
+        "Type": "EducationHub.Conteudo.Application.ViewModels.AulaViewModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EducationHub.API.Controllers.AulasController",
+    "Method": "ObterAulaPorIdAsync",
+    "RelativePath": "api/Aulas/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [],
+    "EndpointName": "GetAulaById"
+  },
+  {
+    "ContainingType": "EducationHub.API.Controllers.AulasController",
+    "Method": "AtualizarAulaAsync",
+    "RelativePath": "api/Aulas/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "aulaViewModel",
+        "Type": "EducationHub.Conteudo.Application.ViewModels.AulaViewModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EducationHub.API.Controllers.AulasController",
+    "Method": "ObterAulasDeUmCursoAsync",
+    "RelativePath": "api/Aulas/curso/{cursoId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "cursoId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "EducationHub.API.Controllers.CursosController",
-    "Method": "ObterTodosAsync",
+    "Method": "ObterTodosCursosAsync",
     "RelativePath": "api/Cursos",
     "HttpMethod": "GET",
     "IsController": true,
@@ -11,7 +81,7 @@
   },
   {
     "ContainingType": "EducationHub.API.Controllers.CursosController",
-    "Method": "AdicionarAsync",
+    "Method": "AdicionarCusroAsync",
     "RelativePath": "api/Cursos",
     "HttpMethod": "POST",
     "IsController": true,
@@ -27,7 +97,7 @@
   },
   {
     "ContainingType": "EducationHub.API.Controllers.CursosController",
-    "Method": "ObterPorIdAsync",
+    "Method": "ObterCursoPorIdAsync",
     "RelativePath": "api/Cursos/{id}",
     "HttpMethod": "GET",
     "IsController": true,
@@ -43,7 +113,7 @@
   },
   {
     "ContainingType": "EducationHub.API.Controllers.CursosController",
-    "Method": "Atualizar",
+    "Method": "AtualizarCursoAsync",
     "RelativePath": "api/Cursos/{id}",
     "HttpMethod": "PUT",
     "IsController": true,

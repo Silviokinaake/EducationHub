@@ -12,8 +12,8 @@ namespace EducationHub.Conteudo.Application.Services
 
         public CursoAppService(ICursoRepositorio cursoRepositorio, IMapper mapper)
         {
-            _cursoRepositorio = cursoRepositorio ?? throw new ArgumentNullException(nameof(cursoRepositorio));
-            _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
+            _cursoRepositorio = cursoRepositorio;
+            _mapper = mapper;
         }
 
         public async Task<CursoViewModel> ObterPorIdAsync(Guid id)

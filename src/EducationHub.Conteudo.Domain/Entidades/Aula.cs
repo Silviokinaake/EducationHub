@@ -1,5 +1,4 @@
 ﻿using EducationHub.Core.DomainObjects;
-using System.Drawing;
 
 namespace EducationHub.Conteudo.Domain.Entidades
 {
@@ -36,7 +35,7 @@ namespace EducationHub.Conteudo.Domain.Entidades
             Validacoes.ValidarSeVazio(Titulo, "O campo Título não pode estar vazio.");
             Validacoes.ValidarTamanho(Titulo, 3, 150, "O campo Título deve ter entre 3 e 150 caracteres.");
             Validacoes.ValidarSeVazio(ConteudoAula, "O campo Conteúdo da aula não pode estar vazio.");
-            Validacoes.ValidarTamanho(ConteudoAula, 10, 5000, "O campo Conteúdo deve ter entre 10 e 5000 caracteres.");
+            Validacoes.ValidarTamanho(ConteudoAula, 10, 5000, "O campo Conteúdo deve ter entre 10 e 1000 caracteres.");
             if (!string.IsNullOrWhiteSpace(MaterialDeApoio))
             {
                 Validacoes.ValidarTamanho(MaterialDeApoio, 5, 1000, "O campo Material de Apoio deve ter entre 5 e 1000 caracteres.");
