@@ -8,9 +8,10 @@ namespace EducationHub.Faturamento.Data
     public class FaturamentoContext : DbContext, IUnitOfWork
     {
         public FaturamentoContext(DbContextOptions options)
-            : base(options) { }
+            : base(options) { } 
 
-        public DbSet<Pagamento> Pagamento { get; set; }
+        // DbSet plural para seguir convenção; mapeamento usa tabela "Pagamentos"
+        public DbSet<Pagamento> Pagamentos { get; set; }
         public DbSet<DadosCartao> DadosCartao { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using EducationHub.Conteudo.Application.ViewModels;
-using EducationHub.Conteudo.Domain.Repositorios;
+using EducationHub.Conteudo.Domain.Interfaces;
 
 namespace EducationHub.Conteudo.Application.Services
 {

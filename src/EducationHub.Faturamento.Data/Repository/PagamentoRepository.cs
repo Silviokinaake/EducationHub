@@ -1,6 +1,6 @@
 ﻿using EducationHub.Core.Data;
 using EducationHub.Faturamento.Domain.Entidades;
-using EducationHub.Faturamento.Domain.Repositorios;
+using EducationHub.Faturamento.Domain.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 namespace EducationHub.Faturamento.Data.Repository
@@ -18,20 +18,27 @@ namespace EducationHub.Faturamento.Data.Repository
 
         public async Task<IEnumerable<Pagamento>> ObterPagamentosPorAlunoAsync(Guid alunoId)
         {
-            return await _context.Pagamento
+            return await _context.Pagamentos
                 .AsNoTracking()
                 .Where(p => p.AlunoId == alunoId)
                 .ToListAsync();
         }
 
+        public async Task<Pagamento?> ObterPorIdAsync(Guid id)
+        {
+            return await _context.Pagamentos
+                .AsNoTracking()
+                .FirstOrDefaultAsync(p => p.Id == id);
+        }
+
         public async Task AdicionarAsync(Pagamento pagamento)
         {
-            await _context.Pagamento.AddAsync(pagamento);
+            await _context.Pagamentos.AddAsync(pagamento);
         }
 
         public async Task AtualizarAsync(Pagamento pagamento)
         {
-            _context.Pagamento.Update(pagamento);
+            _context.Pagamentos.Update(pagamento);
             await Task.CompletedTask;
         }
 

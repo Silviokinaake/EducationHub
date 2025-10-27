@@ -1,8 +1,5 @@
 ﻿using EducationHub.Alunos.Domain.Enums;
 using EducationHub.Core.DomainObjects;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace EducationHub.Alunos.Domain.Entidades
 {
@@ -65,15 +62,15 @@ namespace EducationHub.Alunos.Domain.Entidades
             Status = StatusMatriculaEnum.Cancelada;
         }
 
-        public void RegistrarProgresso(Guid aulaId, double percentual)
+        public void RegistrarProgresso(Guid cursoId, double percentual)
         {
-            Validacoes.ValidarSeIgual(aulaId, Guid.Empty, "Id da aula inválido.");
+            Validacoes.ValidarSeIgual(cursoId, Guid.Empty, "Id da aula inválido.");
             Validacoes.ValidarMinimoMaximo(percentual, 0, 100, "Percentual inválido (0-100).");
 
-            var existente = _historico.FirstOrDefault(h => h.AulaId == aulaId);
+            var existente = _historico.FirstOrDefault(h => h.CursoId == cursoId);
             if (existente is null)
             {
-                _historico.Add(new HistoricoAprendizado(aulaId, percentual));
+                _historico.Add(new HistoricoAprendizado(cursoId, percentual));
             }
             else
             {
@@ -81,8 +78,6 @@ namespace EducationHub.Alunos.Domain.Entidades
             }
         }
 
-        // regra simples para permitir finalização: todas as aulas com >= 100% ou progresso médio >= 100
-        // Como não temos número de aulas aqui, assumimos: se existir ao menos uma entrada e todas >=100
         public bool PodeFinalizar()
         {
             if (Status != StatusMatriculaEnum.Ativa) return false;

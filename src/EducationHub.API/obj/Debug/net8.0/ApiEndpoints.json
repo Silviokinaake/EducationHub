@@ -1,5 +1,68 @@
 [
   {
+    "ContainingType": "EducationHub.API.Controllers.AlunosController",
+    "Method": "ObterTodosAlunos",
+    "RelativePath": "api/Alunos",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EducationHub.API.Controllers.AlunosController",
+    "Method": "AdicionarAluno",
+    "RelativePath": "api/Alunos",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "EducationHub.API.Controllers.AlunosController\u002BCreateAlunoRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EducationHub.API.Controllers.AlunosController",
+    "Method": "ObterAlunoPorId",
+    "RelativePath": "api/Alunos/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EducationHub.API.Controllers.AlunosController",
+    "Method": "AlualizarAluno",
+    "RelativePath": "api/Alunos/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "EducationHub.API.Controllers.AlunosController\u002BUpdateAlunoRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "EducationHub.API.Controllers.AulasController",
     "Method": "AdicionarAulaAsync",
     "RelativePath": "api/Aulas",
@@ -127,6 +190,55 @@
       {
         "Name": "cursoViewModel",
         "Type": "EducationHub.Conteudo.Application.ViewModels.CursoViewModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EducationHub.API.Controllers.FaturamentosController",
+    "Method": "GetPorAluno",
+    "RelativePath": "api/Faturamentos/aluno/{alunoId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "alunoId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EducationHub.API.Controllers.FaturamentosController",
+    "Method": "GetPagamento",
+    "RelativePath": "api/Faturamentos/pagamento/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [],
+    "EndpointName": "GetPagamentoById"
+  },
+  {
+    "ContainingType": "EducationHub.API.Controllers.FaturamentosController",
+    "Method": "Pagar",
+    "RelativePath": "api/Faturamentos/pagar",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "EducationHub.API.Controllers.FaturamentosController\u002BRealizarPagamentoRequest",
         "IsRequired": true
       }
     ],

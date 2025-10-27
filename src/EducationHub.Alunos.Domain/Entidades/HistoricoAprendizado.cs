@@ -4,15 +4,15 @@ namespace EducationHub.Alunos.Domain.Entidades
 {
     public class HistoricoAprendizado
     {
-        public Guid AulaId { get; private set; }
+        public Guid CursoId { get; private set; }
         public double ProgressoPercentual { get; private set; }
         public DateTime DataUltimaAtualizacao { get; private set; }
 
         protected HistoricoAprendizado() { }
 
-        public HistoricoAprendizado(Guid aulaId, double progressoPercentual)
+        public HistoricoAprendizado(Guid cursoId, double progressoPercentual)
         {
-            AulaId = aulaId;
+            CursoId = cursoId;
             AtualizarProgresso(progressoPercentual);
         }
 
@@ -26,9 +26,9 @@ namespace EducationHub.Alunos.Domain.Entidades
         public override bool Equals(object obj)
         {
             if (obj is not HistoricoAprendizado other) return false;
-            return AulaId == other.AulaId;
+            return CursoId == other.CursoId;
         }
 
-        public override int GetHashCode() => AulaId.GetHashCode();
+        public override int GetHashCode() => CursoId.GetHashCode();
     }
 }

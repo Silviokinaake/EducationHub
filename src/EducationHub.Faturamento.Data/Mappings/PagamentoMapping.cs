@@ -13,7 +13,7 @@ namespace EducationHub.Faturamento.Data.Mappings
             builder.Property(p => p.AlunoId)
                 .IsRequired();
 
-            builder.Property(p => p.MatriculaId)
+            builder.Property(p => p.PreMatriculaId)
                 .IsRequired();
 
             builder.Property(p => p.Valor)
@@ -26,34 +26,15 @@ namespace EducationHub.Faturamento.Data.Mappings
             builder.Property(p => p.Status)
                 .IsRequired();
 
-            builder.OwnsOne(p => p.DadosCartao, dc =>
-            {
-                dc.Property(d => d.NomeTitular)
-                    .HasColumnName("NomeTitular")
-                    .HasColumnType("varchar(100)")
-                    .HasMaxLength(100)
-                    .IsRequired();
+            builder.Property(p => p.TokenCartao)
+                .HasColumnName("TokenCartao")
+                .HasColumnType("varchar(200)")
+                .HasMaxLength(200);
 
-                dc.Property(d => d.Numero)
-                    .HasColumnName("NumeroCartao")
-                    .HasColumnType("varchar(20)")
-                    .HasMaxLength(20)
-                    .IsRequired();
-
-                dc.Property(d => d.Validade)
-                    .HasColumnName("ValidadeCartao")
-                    .HasColumnType("varchar(5)")
-                    .HasMaxLength(5)
-                    .IsRequired();
-
-                dc.Property(d => d.Cvv)
-                    .HasColumnName("CvvCartao")
-                    .HasColumnType("varchar(4)")
-                    .HasMaxLength(4)
-                    .IsRequired();
-
-                dc.WithOwner();
-            });
+            builder.Property(p => p.NumeroCartaoMascarado)
+                .HasColumnName("NumeroCartaoMascarado")
+                .HasColumnType("varchar(50)")
+                .HasMaxLength(50);
 
             builder.ToTable("Pagamentos");
         }

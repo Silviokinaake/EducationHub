@@ -7,6 +7,11 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+		<PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.3.1" />
+		<PackageReference Include="Microsoft.AspNetCore.Routing" Version="2.3.0" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.0" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="8.0.0" />
+
 		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
 		<PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.0" />
 		<PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.0" />
@@ -22,7 +27,9 @@
 		<ProjectReference Include="..\EducationHub.Conteudo.Data\EducationHub.Conteudo.Data.csproj" />
 		<ProjectReference Include="..\EducationHub.Conteudo.Domain\EducationHub.Conteudo.Domain.csproj" />
 		<ProjectReference Include="..\EducationHub.Core\EducationHub.Core.csproj" />
+		<ProjectReference Include="..\EducationHub.Faturamento.Application\EducationHub.Faturamento.Application.csproj" />
 		<ProjectReference Include="..\EducationHub.Faturamento.Data\EducationHub.Faturamento.Data.csproj" />
+		<ProjectReference Include="..\EducationHub.Faturamento.Domain\EducationHub.Faturamento.Domain.csproj" />
 	</ItemGroup>
 
 </Project>

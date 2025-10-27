@@ -5,6 +5,110 @@
     "version": "1.0"
   },
   "paths": {
+    "/api/Alunos": {
+      "get": {
+        "tags": [
+          "Alunos"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Alunos"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateAlunoRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateAlunoRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateAlunoRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Alunos/{id}": {
+      "get": {
+        "tags": [
+          "Alunos"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Alunos"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateAlunoRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateAlunoRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateAlunoRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Aulas/{id}": {
       "get": {
         "tags": [
@@ -226,6 +330,84 @@
           }
         }
       }
+    },
+    "/api/Faturamentos/pagar": {
+      "post": {
+        "tags": [
+          "Faturamentos"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RealizarPagamentoRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RealizarPagamentoRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/RealizarPagamentoRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Faturamentos/pagamento/{id}": {
+      "get": {
+        "tags": [
+          "Faturamentos"
+        ],
+        "operationId": "GetPagamentoById",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Faturamentos/aluno/{alunoId}": {
+      "get": {
+        "tags": [
+          "Faturamentos"
+        ],
+        "parameters": [
+          {
+            "name": "alunoId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
     }
   },
   "components": {
@@ -302,6 +484,36 @@
         },
         "additionalProperties": false
       },
+      "CreateAlunoRequest": {
+        "required": [
+          "dataNascimento",
+          "email",
+          "nome",
+          "usuarioId"
+        ],
+        "type": "object",
+        "properties": {
+          "usuarioId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "nome": {
+            "maxLength": 150,
+            "minLength": 3,
+            "type": "string"
+          },
+          "email": {
+            "minLength": 1,
+            "type": "string",
+            "format": "email"
+          },
+          "dataNascimento": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
       "CursoViewModel": {
         "required": [
           "cargaHoraria",
@@ -353,6 +565,87 @@
               "$ref": "#/components/schemas/AulaViewModel"
             },
             "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "DadosCartaoViewModel": {
+        "required": [
+          "cvv",
+          "nomeTitular",
+          "numero",
+          "validade"
+        ],
+        "type": "object",
+        "properties": {
+          "nomeTitular": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "numero": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "validade": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "cvv": {
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "RealizarPagamentoRequest": {
+        "required": [
+          "alunoId",
+          "dadosCartao",
+          "preMatriculaId",
+          "valor"
+        ],
+        "type": "object",
+        "properties": {
+          "alunoId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "preMatriculaId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "valor": {
+            "minimum": 0,01,
+            "type": "number",
+            "format": "double"
+          },
+          "dadosCartao": {
+            "$ref": "#/components/schemas/DadosCartaoViewModel"
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdateAlunoRequest": {
+        "required": [
+          "email",
+          "id",
+          "nome"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "nome": {
+            "maxLength": 150,
+            "minLength": 3,
+            "type": "string"
+          },
+          "email": {
+            "minLength": 1,
+            "type": "string",
+            "format": "email"
           }
         },
         "additionalProperties": false

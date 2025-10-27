@@ -1,5 +1,5 @@
 ﻿using EducationHub.Conteudo.Domain.Entidades;
-using EducationHub.Conteudo.Domain.Repositorios;
+using EducationHub.Conteudo.Domain.Interfaces;
 using EducationHub.Core.Data;
 using Microsoft.EntityFrameworkCore;
 

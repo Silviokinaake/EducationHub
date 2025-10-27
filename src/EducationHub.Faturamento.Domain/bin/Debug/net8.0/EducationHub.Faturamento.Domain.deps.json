@@ -8,10 +8,22 @@
     ".NETCoreApp,Version=v8.0": {
       "EducationHub.Faturamento.Domain/1.0.0": {
         "dependencies": {
+          "EducationHub.Conteudo.Domain": "1.0.0",
           "EducationHub.Core": "1.0.0"
         },
         "runtime": {
           "EducationHub.Faturamento.Domain.dll": {}
+        }
+      },
+      "EducationHub.Conteudo.Domain/1.0.0": {
+        "dependencies": {
+          "EducationHub.Core": "1.0.0"
+        },
+        "runtime": {
+          "EducationHub.Conteudo.Domain.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "EducationHub.Core/1.0.0": {
@@ -26,6 +38,11 @@
   },
   "libraries": {
     "EducationHub.Faturamento.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "EducationHub.Conteudo.Domain/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
