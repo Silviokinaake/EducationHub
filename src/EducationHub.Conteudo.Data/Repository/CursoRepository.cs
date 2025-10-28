@@ -7,9 +7,9 @@ namespace EducationHub.Conteudo.Data.Repository
 {
     public class CursoRepository : ICursoRepositorio
     {
-        private readonly ConteudoContext _context;
+        private readonly ConteudoDbContext _context;
 
-        public CursoRepository(ConteudoContext context)
+        public CursoRepository(ConteudoDbContext context)
         {
             _context = context;
         }

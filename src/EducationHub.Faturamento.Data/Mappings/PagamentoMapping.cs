@@ -20,21 +20,29 @@ namespace EducationHub.Faturamento.Data.Mappings
                 .IsRequired()
                 .HasColumnType("decimal(18,2)");
 
+
             builder.Property(p => p.DataPagamento)
-                .IsRequired();
+                .IsRequired()
+                .HasColumnType("datetime2")
+                .HasDefaultValueSql("GETUTCDATE()");
 
             builder.Property(p => p.Status)
                 .IsRequired();
-
             builder.Property(p => p.TokenCartao)
                 .HasColumnName("TokenCartao")
                 .HasColumnType("varchar(200)")
-                .HasMaxLength(200);
+                .HasMaxLength(200)
+                .IsRequired(false);
 
             builder.Property(p => p.NumeroCartaoMascarado)
                 .HasColumnName("NumeroCartaoMascarado")
                 .HasColumnType("varchar(50)")
-                .HasMaxLength(50);
+                .HasMaxLength(50)
+                .IsRequired(false);
+
+            // índices úteis para consultas
+            builder.HasIndex(p => p.AlunoId);
+            builder.HasIndex(p => p.PreMatriculaId);
 
             builder.ToTable("Pagamentos");
         }

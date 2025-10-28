@@ -7,9 +7,9 @@ namespace EducationHub.Faturamento.Data.Repository
 {
     public class PagamentoRepository : IPagamentoRepositorio, IDisposable
     {
-        private readonly FaturamentoContext _context;
+        private readonly FaturamentoDbContext _context;
 
-        public PagamentoRepository(FaturamentoContext context)
+        public PagamentoRepository(FaturamentoDbContext context)
         {
             _context = context;
         }

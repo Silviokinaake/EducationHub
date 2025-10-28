@@ -1,8 +1,8 @@
-﻿using EducationHub.Alunos.Domain.Entidades;
-using EducationHub.Alunos.Domain.Repositorio;
+﻿using System;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using System.ComponentModel.DataAnnotations;
-using System.Reflection;
+using EducationHub.Alunos.Application.Services;
+using EducationHub.Alunos.Application.ViewModels;
 
 namespace EducationHub.API.Controllers
 {
@@ -10,11 +10,11 @@ namespace EducationHub.API.Controllers
     [Route("api/[controller]")]
     public class AlunosController : ControllerBase
     {
-        private readonly IAlunoRepositorio _alunoRepositorio;
+        private readonly IAlunoAppService _alunoAppService;
 
-        public AlunosController(IAlunoRepositorio alunoRepositorio)
+        public AlunosController(IAlunoAppService alunoAppService)
         {
-            _alunoRepositorio = alunoRepositorio ?? throw new ArgumentNullException(nameof(alunoRepositorio));
+            _alunoAppService = alunoAppService ?? throw new ArgumentNullException(nameof(alunoAppService));
         }
 
         /// <summary>
@@ -23,17 +23,17 @@ namespace EducationHub.API.Controllers
         [HttpGet]
         public async Task<IActionResult> ObterTodosAlunos()
         {
-            var alunos = await _alunoRepositorio.ObterTodosAsync();
+            var alunos = await _alunoAppService.ObterTodosAsync();
             return Ok(alunos);
         }
 
         /// <summary>
         /// Obtém um aluno por id.
         /// </summary>
-        [HttpGet("{id:guid}")]
+        [HttpGet("{id:guid}", Name = "GetAlunoById")]
         public async Task<IActionResult> ObterAlunoPorId(Guid id)
         {
-            var aluno = await _alunoRepositorio.ObterPorIdAsync(id);
+            var aluno = await _alunoAppService.ObterPorIdAsync(id);
             if (aluno == null) return NotFound();
             return Ok(aluno);
         }
@@ -42,77 +42,32 @@ namespace EducationHub.API.Controllers
         /// Cria um novo aluno.
         /// </summary>
         [HttpPost]
-        public async Task<IActionResult> AdicionarAluno([FromBody] CreateAlunoRequest request)
+        public async Task<IActionResult> AdicionarAluno([FromBody] AlunoViewModel request)
         {
             if (!ModelState.IsValid) return BadRequest(ModelState);
 
-            var id = Guid.NewGuid();
-            var aluno = new Aluno(id, request.UsuarioId, request.Nome, request.Email, request.DataNascimento);
+            var created = await _alunoAppService.CriarAsync(request);
+            if (created is null) return StatusCode(500, "Erro ao persistir novo aluno.");
 
-            await _alunoRepositorio.AdicionarAsync(aluno);
-            if (!await CommitIfPossible()) return StatusCode(500, "Erro ao persistir novo aluno.");
-
-            return CreatedAtRoute(new { id = aluno.Id }, aluno);
+            return CreatedAtRoute("GetAlunoById", new { id = created.Id }, created);
         }
 
         /// <summary>
         /// Atualiza um aluno existente.
         /// </summary>
         [HttpPut("{id:guid}")]
-        public async Task<IActionResult> AlualizarAluno(Guid id, [FromBody] UpdateAlunoRequest request)
+        public async Task<IActionResult> AtualizarAluno(Guid id, [FromBody] AlunoViewModel request)
         {
             if (!ModelState.IsValid) return BadRequest(ModelState);
             if (id != request.Id) return BadRequest("O id informado não corresponde ao id do payload.");
 
-            var existing = await _alunoRepositorio.ObterPorIdAsync(id);
+            var existing = await _alunoAppService.ObterPorIdAsync(id);
             if (existing == null) return NotFound();
 
-            existing.SetNome(request.Nome);
-            existing.SetEmail(request.Email);
-
-            await _alunoRepositorio.AtualizarAsync(existing);
-            if (!await CommitIfPossible()) return StatusCode(500, "Erro ao persistir atualização do aluno.");
+            var ok = await _alunoAppService.AtualizarAsync(request);
+            if (!ok) return StatusCode(500, "Erro ao persistir atualização do aluno.");
 
             return NoContent();
-        }
-
-        public class CreateAlunoRequest
-        {
-            [Required] public Guid UsuarioId { get; set; }
-            [Required] [StringLength(150, MinimumLength = 3)] public string Nome { get; set; }
-            [Required] [EmailAddress] public string Email { get; set; }
-            [Required] public DateTime DataNascimento { get; set; }
-        }
-
-        public class UpdateAlunoRequest
-        {
-            [Required] public Guid Id { get; set; }
-            [Required] [StringLength(150, MinimumLength = 3)] public string Nome { get; set; }
-            [Required] [EmailAddress] public string Email { get; set; }
-        }
-
-        private async Task<bool> CommitIfPossible()
-        {
-            try
-            {
-                var prop = _alunoRepositorio.GetType().GetProperty("UnitOfWork", BindingFlags.Instance | BindingFlags.Public);
-                if (prop is null) return true;
-
-                var unitOfWork = prop.GetValue(_alunoRepositorio);
-                if (unitOfWork == null) return false;
-
-                var commitMethod = unitOfWork.GetType().GetMethod("Commit", BindingFlags.Instance | BindingFlags.Public);
-                if (commitMethod == null) return false;
-
-                var task = commitMethod.Invoke(unitOfWork, Array.Empty<object>()) as Task<bool>;
-                if (task == null) return false;
-
-                return await task;
-            }
-            catch
-            {
-                return false;
-            }
         }
     }
 }

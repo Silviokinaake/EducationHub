@@ -1,9 +1,11 @@
 ﻿using EducationHub.Alunos.Domain.Entidades;
+using EducationHub.Core.Data;
 
 namespace EducationHub.Alunos.Domain.Repositorio
 {
     public interface IAlunoRepositorio: IDisposable
     {
+        IUnitOfWork UnitOfWork { get; }
         Task<Aluno> ObterPorIdAsync(Guid id);
         Task<IEnumerable<Aluno>> ObterTodosAsync();
         Task AdicionarAsync(Aluno aluno);

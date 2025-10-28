@@ -5,14 +5,12 @@ namespace EducationHub.API.Configuration
 {
     public static class IdentityConfig
     {
-        //public static IServiceCollection AddIdentityConfiguration(this IServiceCollection services, 
-        //    IConfiguration configuration)
-        //{
-        //    services.AddDbContext<ConteudoContext>(options =>
-        //        options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+        public static IServiceCollection AddIdentityConfiguration(this IServiceCollection services,
+            IConfiguration configuration)
+        {
 
-        //    return services;
-        //}
+            return services;
+        }
     }
 }
 

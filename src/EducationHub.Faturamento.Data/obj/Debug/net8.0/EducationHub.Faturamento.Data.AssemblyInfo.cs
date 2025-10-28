@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("EducationHub.Faturamento.Data")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7f98c02d3e3987fd1f7da0f26a6eb07e7ec27a4f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f9fe41440e5171d517bcf8f090e4501842d8571d")]
 [assembly: System.Reflection.AssemblyProductAttribute("EducationHub.Faturamento.Data")]
 [assembly: System.Reflection.AssemblyTitleAttribute("EducationHub.Faturamento.Data")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

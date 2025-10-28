@@ -1,6 +1,5 @@
-using System;
 using AutoMapper;
-using Microsoft.EntityFrameworkCore;
+using EducationHub.Alunos.Data;
 using EducationHub.Conteudo.Application.Services;
 using EducationHub.Conteudo.Data;
 using EducationHub.Conteudo.Data.Repository;
@@ -11,15 +10,20 @@ using EducationHub.Faturamento.Data.Repository;
 using EducationHub.Faturamento.Domain.Interfaces;
 using EducationHub.Faturamento.Domain.Services;
 using EducationHub.Faturamento.Domain.Servicos;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // DbContexts (EF Core)
-builder.Services.AddDbContext<ConteudoContext>(options =>
+builder.Services.AddDbContext<ConteudoDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-builder.Services.AddDbContext<FaturamentoContext>(options =>
+builder.Services.AddDbContext<FaturamentoDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("FaturamentoConnection")));
+
+// registrar DbContext Alunos
+builder.Services.AddDbContext<AlunoDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))); // ou outra connection string específica
 
 // AutoMapper - configuração explícita (compatível com AutoMapper 15.x)
 var mapperConfig = new MapperConfiguration(cfg =>
@@ -37,6 +41,10 @@ builder.Services.AddScoped<ICursoAppService, CursoAppService>();
 builder.Services.AddScoped<IPagamentoAppService, PagamentoAppService>();
 builder.Services.AddScoped<IPagamentoServico, PagamentoServico>();
 builder.Services.AddScoped<IPagamentoRepositorio, PagamentoRepository>();
+
+// registrar repositório e app service
+builder.Services.AddScoped<EducationHub.Alunos.Domain.Repositorio.IAlunoRepositorio, EducationHub.Alunos.Data.Repository.AlunoRepository>();
+builder.Services.AddScoped<EducationHub.Alunos.Application.Services.IAlunoAppService, EducationHub.Alunos.Application.Services.AlunoAppService>();
 
 // Registrando implementações simuladas de infra para evitar erro de DI
 builder.Services.AddScoped<IPagamentoGateway, PagamentoGatewaySimulado>();
@@ -60,4 +68,15 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseAuthorization();
 app.MapControllers();
+
+using (var scope = app.Services.CreateScope())
+{
+    var env = scope.ServiceProvider.GetRequiredService<IHostEnvironment>();
+    if (env.IsDevelopment())
+    {
+        var context = scope.ServiceProvider.GetRequiredService<AlunoDbContext>();
+        EducationHub.Alunos.Data.AlunoDbInitializer.Seed(context);
+    }
+}
+
 app.Run();

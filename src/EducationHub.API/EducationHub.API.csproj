@@ -11,6 +11,10 @@
 		<PackageReference Include="Microsoft.AspNetCore.Routing" Version="2.3.0" />
 		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.0" />
 		<PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="8.0.0" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.0">
+		  <PrivateAssets>all</PrivateAssets>
+		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
 
 		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
 		<PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.0" />
@@ -22,6 +26,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<ProjectReference Include="..\EducationHub.Alunos.Application\EducationHub.Alunos.Application.csproj" />
 		<ProjectReference Include="..\EducationHub.Alunos.Domain\EducationHub.Alunos.Domain.csproj" />
 		<ProjectReference Include="..\EducationHub.Conteudo.Application\EducationHub.Conteudo.Application.csproj" />
 		<ProjectReference Include="..\EducationHub.Conteudo.Data\EducationHub.Conteudo.Data.csproj" />

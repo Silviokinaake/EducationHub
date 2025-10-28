@@ -1,37 +1,12 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Git\\MBA_Entrega_Modulo_3\\EducationHub\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{6A2DE6E8-76DA-4B4A-9C27-125FCCE426FB}|src\\EducationHub.API\\EducationHub.API.csproj|c:\\git\\mba_entrega_modulo_3\\educationhub\\src\\educationhub.api\\controllers\\alunoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6A2DE6E8-76DA-4B4A-9C27-125FCCE426FB}|src\\EducationHub.API\\EducationHub.API.csproj|solutionrelative:src\\educationhub.api\\controllers\\alunoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": [
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 0,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "AlunosController.cs",
-              "DocumentMoniker": "C:\\Git\\MBA_Entrega_Modulo_3\\EducationHub\\src\\EducationHub.API\\Controllers\\AlunosController.cs",
-              "RelativeDocumentMoniker": "src\\EducationHub.API\\Controllers\\AlunosController.cs",
-              "ToolTip": "C:\\Git\\MBA_Entrega_Modulo_3\\EducationHub\\src\\EducationHub.API\\Controllers\\AlunosController.cs",
-              "RelativeToolTip": "src\\EducationHub.API\\Controllers\\AlunosController.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAHUAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-27T05:03:52.725Z",
-              "EditorCaption": ""
-            }
-          ]
-        }
-      ]
+      "DocumentGroups": []
     }
   ]
 }

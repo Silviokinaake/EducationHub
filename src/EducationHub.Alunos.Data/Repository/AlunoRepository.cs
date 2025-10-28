@@ -1,5 +1,6 @@
 ﻿using EducationHub.Alunos.Domain.Entidades;
 using EducationHub.Alunos.Domain.Repositorio;
+using EducationHub.Core.Data;
 using Microsoft.EntityFrameworkCore;
 
 namespace EducationHub.Alunos.Data.Repository
@@ -12,6 +13,8 @@ namespace EducationHub.Alunos.Data.Repository
         {
             _context = context ?? throw new ArgumentNullException(nameof(context));
         }
+
+        public IUnitOfWork UnitOfWork => _context;
 
         public async Task<Aluno> ObterPorIdAsync(Guid id)
         {

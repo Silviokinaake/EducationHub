@@ -24,17 +24,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/CreateAlunoRequest"
+                "$ref": "#/components/schemas/AlunoViewModel"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/CreateAlunoRequest"
+                "$ref": "#/components/schemas/AlunoViewModel"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/CreateAlunoRequest"
+                "$ref": "#/components/schemas/AlunoViewModel"
               }
             }
           }
@@ -51,6 +51,7 @@
         "tags": [
           "Alunos"
         ],
+        "operationId": "GetAlunoById",
         "parameters": [
           {
             "name": "id",
@@ -87,17 +88,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/UpdateAlunoRequest"
+                "$ref": "#/components/schemas/AlunoViewModel"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/UpdateAlunoRequest"
+                "$ref": "#/components/schemas/AlunoViewModel"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/UpdateAlunoRequest"
+                "$ref": "#/components/schemas/AlunoViewModel"
               }
             }
           }
@@ -412,6 +413,41 @@
   },
   "components": {
     "schemas": {
+      "AlunoViewModel": {
+        "required": [
+          "dataNascimento",
+          "email",
+          "nome",
+          "usuarioId"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "usuarioId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "nome": {
+            "maxLength": 150,
+            "minLength": 3,
+            "type": "string"
+          },
+          "email": {
+            "maxLength": 150,
+            "minLength": 0,
+            "type": "string",
+            "format": "email"
+          },
+          "dataNascimento": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
       "AulaViewModel": {
         "required": [
           "conteudoAula",
@@ -480,36 +516,6 @@
             "minLength": 0,
             "type": "string",
             "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "CreateAlunoRequest": {
-        "required": [
-          "dataNascimento",
-          "email",
-          "nome",
-          "usuarioId"
-        ],
-        "type": "object",
-        "properties": {
-          "usuarioId": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "nome": {
-            "maxLength": 150,
-            "minLength": 3,
-            "type": "string"
-          },
-          "email": {
-            "minLength": 1,
-            "type": "string",
-            "format": "email"
-          },
-          "dataNascimento": {
-            "type": "string",
-            "format": "date-time"
           }
         },
         "additionalProperties": false
@@ -621,31 +627,6 @@
           },
           "dadosCartao": {
             "$ref": "#/components/schemas/DadosCartaoViewModel"
-          }
-        },
-        "additionalProperties": false
-      },
-      "UpdateAlunoRequest": {
-        "required": [
-          "email",
-          "id",
-          "nome"
-        ],
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "nome": {
-            "maxLength": 150,
-            "minLength": 3,
-            "type": "string"
-          },
-          "email": {
-            "minLength": 1,
-            "type": "string",
-            "format": "email"
           }
         },
         "additionalProperties": false

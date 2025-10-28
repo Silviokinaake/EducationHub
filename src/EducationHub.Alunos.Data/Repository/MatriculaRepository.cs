@@ -21,4 +21,3 @@ namespace EducationHub.Alunos.Data.Repository
         }
     }
 }
-}

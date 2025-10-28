@@ -19,7 +19,7 @@
     "Parameters": [
       {
         "Name": "request",
-        "Type": "EducationHub.API.Controllers.AlunosController\u002BCreateAlunoRequest",
+        "Type": "EducationHub.Alunos.Application.ViewModels.AlunoViewModel",
         "IsRequired": true
       }
     ],
@@ -39,11 +39,12 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": []
+    "ReturnTypes": [],
+    "EndpointName": "GetAlunoById"
   },
   {
     "ContainingType": "EducationHub.API.Controllers.AlunosController",
-    "Method": "AlualizarAluno",
+    "Method": "AtualizarAluno",
     "RelativePath": "api/Alunos/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
@@ -56,7 +57,7 @@
       },
       {
         "Name": "request",
-        "Type": "EducationHub.API.Controllers.AlunosController\u002BUpdateAlunoRequest",
+        "Type": "EducationHub.Alunos.Application.ViewModels.AlunoViewModel",
         "IsRequired": true
       }
     ],
