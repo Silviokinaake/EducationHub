@@ -16,14 +16,14 @@ var builder = WebApplication.CreateBuilder(args);
 
 // DbContexts (EF Core)
 builder.Services.AddDbContext<ConteudoDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("ConteudoConnection")));
 
 builder.Services.AddDbContext<FaturamentoDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("FaturamentoConnection")));
 
 // registrar DbContext Alunos
 builder.Services.AddDbContext<AlunoDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))); // ou outra connection string específica
+    options.UseSqlServer(builder.Configuration.GetConnectionString("AlunoConnection"))); // ou outra connection string específica
 
 // AutoMapper - configuração explícita (compatível com AutoMapper 15.x)
 var mapperConfig = new MapperConfiguration(cfg =>
@@ -36,6 +36,8 @@ builder.Services.AddSingleton(mapper);
 // Injeção de dependências - Conteúdo
 builder.Services.AddScoped<ICursoRepositorio, CursoRepository>();
 builder.Services.AddScoped<ICursoAppService, CursoAppService>();
+builder.Services.AddScoped<IAulaRepositorio, AulaRepository>();
+builder.Services.AddScoped<IAulaAppService, AulaAppService>();
 
 // Injeção de dependências - Faturamento (Application, Domain e Repository)
 builder.Services.AddScoped<IPagamentoAppService, PagamentoAppService>();

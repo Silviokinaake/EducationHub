@@ -62,7 +62,7 @@ namespace EducationHub.API.Controllers
                 return BadRequest(ModelState);
 
             await _cursoAppService.AtualizarAsync(cursoViewModel);
-            return NoContent(); // 204 - sucesso sem conteúdo
+            return NoContent();
         }
 
     }

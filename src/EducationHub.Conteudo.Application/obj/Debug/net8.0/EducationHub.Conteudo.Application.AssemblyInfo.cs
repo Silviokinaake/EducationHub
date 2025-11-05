@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("EducationHub.Conteudo.Application")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f9fe41440e5171d517bcf8f090e4501842d8571d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5e26e0798fdf1cf7038cdbb71f776586dc955ea3")]
 [assembly: System.Reflection.AssemblyProductAttribute("EducationHub.Conteudo.Application")]
 [assembly: System.Reflection.AssemblyTitleAttribute("EducationHub.Conteudo.Application")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

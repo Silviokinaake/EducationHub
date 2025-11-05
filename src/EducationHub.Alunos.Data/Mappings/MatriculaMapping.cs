@@ -27,22 +27,18 @@ namespace EducationHub.Alunos.Data.Mappings
             builder.Property(m => m.Status)
                 .IsRequired();
 
-            // Índices úteis
             builder.HasIndex(m => m.AlunoId);
             builder.HasIndex(m => m.CursoId);
 
-            // Histórico como owned collection (value objects)
             builder.OwnsMany(
                 m => m.Historico,
                 ha =>
                 {
-                    // chave sombra para os itens do histórico
                     ha.Property<Guid>("Id")
                         .ValueGeneratedOnAdd();
 
                     ha.HasKey("Id");
 
-                    // FK sombra para vincular ao agregado Matricula
                     ha.WithOwner().HasForeignKey("MatriculaId");
 
                     ha.Property(h => h.CursoId)
@@ -58,7 +54,6 @@ namespace EducationHub.Alunos.Data.Mappings
                     ha.ToTable("MatriculaHistoricos");
                 });
 
-            // Relação com Aluno (sem propriedade de navegação na Matricula)
             builder.HasOne<Domain.Entidades.Aluno>()
                 .WithMany(a => a.Matriculas)
                 .HasForeignKey("AlunoId")

@@ -16,6 +16,16 @@ namespace EducationHub.API.Controllers
         }
 
         /// <summary>
+        /// Obtém todas as aulas de um curso específico.
+        /// </summary>
+        [HttpGet("curso/{cursoId:guid}")]
+        public async Task<IActionResult> ObterAulasDeUmCursoAsync(Guid cursoId)
+        {
+            var aulas = await _aulaAppService.ObterPorCursoAsync(cursoId);
+            return Ok(aulas);
+        }
+
+        /// <summary>
         /// Obtém uma aula pelo identificador.
         /// </summary>
         [HttpGet("{id:guid}", Name = "GetAulaById")]
@@ -24,16 +34,6 @@ namespace EducationHub.API.Controllers
             var aula = await _aulaAppService.ObterPorIdAsync(id);
             if (aula is null) return NotFound();
             return Ok(aula);
-        }
-
-        /// <summary>
-        /// Obtém todas as aulas de um curso específico.
-        /// </summary>
-        [HttpGet("curso/{cursoId:guid}")]
-        public async Task<IActionResult> ObterAulasDeUmCursoAsync(Guid cursoId)
-        {
-            var aulas = await _aulaAppService.ObterPorCursoAsync(cursoId);
-            return Ok(aulas);
         }
 
         /// <summary>

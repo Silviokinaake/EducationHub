@@ -110,6 +110,29 @@
         }
       }
     },
+    "/api/Aulas/curso/{cursoId}": {
+      "get": {
+        "tags": [
+          "Aulas"
+        ],
+        "parameters": [
+          {
+            "name": "cursoId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Aulas/{id}": {
       "get": {
         "tags": [
@@ -167,29 +190,6 @@
             }
           }
         },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/Aulas/curso/{cursoId}": {
-      "get": {
-        "tags": [
-          "Aulas"
-        ],
-        "parameters": [
-          {
-            "name": "cursoId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "format": "uuid"
-            }
-          }
-        ],
         "responses": {
           "200": {
             "description": "OK"

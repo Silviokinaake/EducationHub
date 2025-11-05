@@ -29,7 +29,6 @@ namespace EducationHub.Alunos.Data.Mappings
 
             builder.HasIndex(a => a.Email).IsUnique();
 
-            // Relacionamentos 1:N (Aluno -> Matriculas, Certificados)
             builder.HasMany(a => a.Matriculas)
                 .WithOne()
                 .HasForeignKey("AlunoId")

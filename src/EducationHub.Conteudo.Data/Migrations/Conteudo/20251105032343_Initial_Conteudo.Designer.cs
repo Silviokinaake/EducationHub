@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EducationHub.Conteudo.Data.Migrations.Conteudo
 {
     [DbContext(typeof(ConteudoDbContext))]
-    [Migration("20251027141844_Initial_Conteudo")]
+    [Migration("20251105032343_Initial_Conteudo")]
     partial class Initial_Conteudo
     {
         /// <inheritdoc />

@@ -16,6 +16,7 @@ namespace EducationHub.Conteudo.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            // Define padrão de colunas string como varchar(100)
             foreach (var property in modelBuilder.Model
                          .GetEntityTypes()
                          .SelectMany(e => e.GetProperties())
@@ -24,12 +25,24 @@ namespace EducationHub.Conteudo.Data
                 property.SetColumnType("varchar(100)");
             }
 
+            // Aplica configurações de mapeamento (EntityTypeConfiguration)
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(ConteudoDbContext).Assembly);
+
+            // Define comportamento de deleção em cascata (boa prática)
+            foreach (var relationship in modelBuilder.Model.GetEntityTypes()
+                         .SelectMany(e => e.GetForeignKeys()))
+            {
+                relationship.DeleteBehavior = DeleteBehavior.ClientSetNull;
+            }
+
+            base.OnModelCreating(modelBuilder);
         }
 
         public async Task<bool> Commit()
         {
-            foreach (var entry in ChangeTracker.Entries().Where(entry => entry.Entity.GetType().GetProperty("DataCadastro") != null))
+            // Atualiza DataCadastro apenas em novas entidades
+            foreach (var entry in ChangeTracker.Entries()
+                         .Where(entry => entry.Entity.GetType().GetProperty("DataCadastro") != null))
             {
                 if (entry.State == EntityState.Added)
                 {
