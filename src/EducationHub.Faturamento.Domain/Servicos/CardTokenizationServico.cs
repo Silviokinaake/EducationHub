@@ -1,4 +1,5 @@
-﻿using EducationHub.Faturamento.Domain.Interfaces;
+﻿using EducationHub.Faturamento.Domain.Entidades;
+using EducationHub.Faturamento.Domain.Interfaces;
 using System.Security.Cryptography;
 using System.Text;
 

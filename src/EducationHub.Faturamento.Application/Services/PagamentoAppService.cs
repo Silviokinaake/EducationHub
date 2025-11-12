@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using EducationHub.Faturamento.Application.ViewModels;
+using EducationHub.Faturamento.Domain.Entidades;
 using EducationHub.Faturamento.Domain.Interfaces;
 
 namespace EducationHub.Faturamento.Application.Services

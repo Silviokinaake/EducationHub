@@ -1,0 +1,1 @@
+﻿INSERT INTO Alunos (Id, UsuarioId, Nome, Email, DataNascimento) VALUES ('a4675349-e4b9-4086-9618-a604f4aa08a3', '1796863e-92f1-4157-9581-a6f5d3ff0338', 'Aluno Teste', 'aluno.teste@example.com', '2000-11-12 02:30:50');

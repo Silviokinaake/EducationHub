@@ -3,44 +3,8 @@
   "WorkspaceRootPath": "C:\\Git\\MBA_Entrega_Modulo_3\\EducationHub\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5CDE9AF9-9EE5-43C4-B3DD-91589322B81D}|src\\EducationHub.Alunos.Data\\EducationHub.Alunos.Data.csproj|c:\\git\\mba_entrega_modulo_3\\educationhub\\src\\educationhub.alunos.data\\mappings\\alunomapping.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5CDE9AF9-9EE5-43C4-B3DD-91589322B81D}|src\\EducationHub.Alunos.Data\\EducationHub.Alunos.Data.csproj|solutionrelative:src\\educationhub.alunos.data\\mappings\\alunomapping.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5CDE9AF9-9EE5-43C4-B3DD-91589322B81D}|src\\EducationHub.Alunos.Data\\EducationHub.Alunos.Data.csproj|c:\\git\\mba_entrega_modulo_3\\educationhub\\src\\educationhub.alunos.data\\mappings\\matriculamapping.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5CDE9AF9-9EE5-43C4-B3DD-91589322B81D}|src\\EducationHub.Alunos.Data\\EducationHub.Alunos.Data.csproj|solutionrelative:src\\educationhub.alunos.data\\mappings\\matriculamapping.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8EBFFFE5-E2B9-466A-B1BC-CDDFFD9450B4}|src\\EducationHub.Conteudo.Application\\EducationHub.Conteudo.Application.csproj|c:\\git\\mba_entrega_modulo_3\\educationhub\\src\\educationhub.conteudo.application\\automapper\\cursomappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8EBFFFE5-E2B9-466A-B1BC-CDDFFD9450B4}|src\\EducationHub.Conteudo.Application\\EducationHub.Conteudo.Application.csproj|solutionrelative:src\\educationhub.conteudo.application\\automapper\\cursomappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6A2DE6E8-76DA-4B4A-9C27-125FCCE426FB}|src\\EducationHub.API\\EducationHub.API.csproj|c:\\git\\mba_entrega_modulo_3\\educationhub\\src\\educationhub.api\\controllers\\aulascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6A2DE6E8-76DA-4B4A-9C27-125FCCE426FB}|src\\EducationHub.API\\EducationHub.API.csproj|solutionrelative:src\\educationhub.api\\controllers\\aulascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6A2DE6E8-76DA-4B4A-9C27-125FCCE426FB}|src\\EducationHub.API\\EducationHub.API.csproj|c:\\git\\mba_entrega_modulo_3\\educationhub\\src\\educationhub.api\\controllers\\cursoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6A2DE6E8-76DA-4B4A-9C27-125FCCE426FB}|src\\EducationHub.API\\EducationHub.API.csproj|solutionrelative:src\\educationhub.api\\controllers\\cursoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6A2DE6E8-76DA-4B4A-9C27-125FCCE426FB}|src\\EducationHub.API\\EducationHub.API.csproj|c:\\git\\mba_entrega_modulo_3\\educationhub\\src\\educationhub.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6A2DE6E8-76DA-4B4A-9C27-125FCCE426FB}|src\\EducationHub.API\\EducationHub.API.csproj|solutionrelative:src\\educationhub.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{76B74533-90DC-4926-A8D9-6619AEE21B1B}|src\\EducationHub.Conteudo.Data\\EducationHub.Conteudo.Data.csproj|c:\\git\\mba_entrega_modulo_3\\educationhub\\src\\educationhub.conteudo.data\\mappings\\cursomapping.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{76B74533-90DC-4926-A8D9-6619AEE21B1B}|src\\EducationHub.Conteudo.Data\\EducationHub.Conteudo.Data.csproj|solutionrelative:src\\educationhub.conteudo.data\\mappings\\cursomapping.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6A2DE6E8-76DA-4B4A-9C27-125FCCE426FB}|src\\EducationHub.API\\EducationHub.API.csproj|c:\\git\\mba_entrega_modulo_3\\educationhub\\src\\educationhub.api\\configuration\\identityconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6A2DE6E8-76DA-4B4A-9C27-125FCCE426FB}|src\\EducationHub.API\\EducationHub.API.csproj|solutionrelative:src\\educationhub.api\\configuration\\identityconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6A2DE6E8-76DA-4B4A-9C27-125FCCE426FB}|src\\EducationHub.API\\EducationHub.API.csproj|c:\\git\\mba_entrega_modulo_3\\educationhub\\src\\educationhub.api\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{6A2DE6E8-76DA-4B4A-9C27-125FCCE426FB}|src\\EducationHub.API\\EducationHub.API.csproj|solutionrelative:src\\educationhub.api\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6A2DE6E8-76DA-4B4A-9C27-125FCCE426FB}|src\\EducationHub.API\\EducationHub.API.csproj|c:\\git\\mba_entrega_modulo_3\\educationhub\\src\\educationhub.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{6A2DE6E8-76DA-4B4A-9C27-125FCCE426FB}|src\\EducationHub.API\\EducationHub.API.csproj|solutionrelative:src\\educationhub.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{6A2DE6E8-76DA-4B4A-9C27-125FCCE426FB}|src\\EducationHub.API\\EducationHub.API.csproj|c:\\git\\mba_entrega_modulo_3\\educationhub\\src\\educationhub.api\\controllers\\alunoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6A2DE6E8-76DA-4B4A-9C27-125FCCE426FB}|src\\EducationHub.API\\EducationHub.API.csproj|solutionrelative:src\\educationhub.api\\controllers\\alunoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -55,128 +19,15 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "AlunoMapping.cs",
-              "DocumentMoniker": "C:\\Git\\MBA_Entrega_Modulo_3\\EducationHub\\src\\EducationHub.Alunos.Data\\Mappings\\AlunoMapping.cs",
-              "RelativeDocumentMoniker": "src\\EducationHub.Alunos.Data\\Mappings\\AlunoMapping.cs",
-              "ToolTip": "C:\\Git\\MBA_Entrega_Modulo_3\\EducationHub\\src\\EducationHub.Alunos.Data\\Mappings\\AlunoMapping.cs",
-              "RelativeToolTip": "src\\EducationHub.Alunos.Data\\Mappings\\AlunoMapping.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAAAAAAAAAAAA==",
+              "Title": "AlunosController.cs",
+              "DocumentMoniker": "C:\\Git\\MBA_Entrega_Modulo_3\\EducationHub\\src\\EducationHub.API\\Controllers\\AlunosController.cs",
+              "RelativeDocumentMoniker": "src\\EducationHub.API\\Controllers\\AlunosController.cs",
+              "ToolTip": "C:\\Git\\MBA_Entrega_Modulo_3\\EducationHub\\src\\EducationHub.API\\Controllers\\AlunosController.cs",
+              "RelativeToolTip": "src\\EducationHub.API\\Controllers\\AlunosController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-05T12:13:23.826Z",
+              "WhenOpened": "2025-11-12T03:31:32.407Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "MatriculaMapping.cs",
-              "DocumentMoniker": "C:\\Git\\MBA_Entrega_Modulo_3\\EducationHub\\src\\EducationHub.Alunos.Data\\Mappings\\MatriculaMapping.cs",
-              "RelativeDocumentMoniker": "src\\EducationHub.Alunos.Data\\Mappings\\MatriculaMapping.cs",
-              "ToolTip": "C:\\Git\\MBA_Entrega_Modulo_3\\EducationHub\\src\\EducationHub.Alunos.Data\\Mappings\\MatriculaMapping.cs",
-              "RelativeToolTip": "src\\EducationHub.Alunos.Data\\Mappings\\MatriculaMapping.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-05T12:12:23.062Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "CursosController.cs",
-              "DocumentMoniker": "C:\\Git\\MBA_Entrega_Modulo_3\\EducationHub\\src\\EducationHub.API\\Controllers\\CursosController.cs",
-              "RelativeDocumentMoniker": "src\\EducationHub.API\\Controllers\\CursosController.cs",
-              "ToolTip": "C:\\Git\\MBA_Entrega_Modulo_3\\EducationHub\\src\\EducationHub.API\\Controllers\\CursosController.cs",
-              "RelativeToolTip": "src\\EducationHub.API\\Controllers\\CursosController.cs",
-              "ViewState": "AgIAABsAAAAAAAAAAAAYwEAAAAAfAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-05T02:53:38.534Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Git\\MBA_Entrega_Modulo_3\\EducationHub\\src\\EducationHub.API\\Program.cs",
-              "RelativeDocumentMoniker": "src\\EducationHub.API\\Program.cs",
-              "ToolTip": "C:\\Git\\MBA_Entrega_Modulo_3\\EducationHub\\src\\EducationHub.API\\Program.cs",
-              "RelativeToolTip": "src\\EducationHub.API\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAkAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-05T02:12:29.401Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "CursoMapping.cs",
-              "DocumentMoniker": "C:\\Git\\MBA_Entrega_Modulo_3\\EducationHub\\src\\EducationHub.Conteudo.Data\\Mappings\\CursoMapping.cs",
-              "RelativeDocumentMoniker": "src\\EducationHub.Conteudo.Data\\Mappings\\CursoMapping.cs",
-              "ToolTip": "C:\\Git\\MBA_Entrega_Modulo_3\\EducationHub\\src\\EducationHub.Conteudo.Data\\Mappings\\CursoMapping.cs",
-              "RelativeToolTip": "src\\EducationHub.Conteudo.Data\\Mappings\\CursoMapping.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-05T03:37:46.341Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "CursoMappingProfile.cs",
-              "DocumentMoniker": "C:\\Git\\MBA_Entrega_Modulo_3\\EducationHub\\src\\EducationHub.Conteudo.Application\\AutoMapper\\CursoMappingProfile.cs",
-              "RelativeDocumentMoniker": "src\\EducationHub.Conteudo.Application\\AutoMapper\\CursoMappingProfile.cs",
-              "ToolTip": "C:\\Git\\MBA_Entrega_Modulo_3\\EducationHub\\src\\EducationHub.Conteudo.Application\\AutoMapper\\CursoMappingProfile.cs",
-              "RelativeToolTip": "src\\EducationHub.Conteudo.Application\\AutoMapper\\CursoMappingProfile.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-05T03:45:34.868Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "AulasController.cs",
-              "DocumentMoniker": "C:\\Git\\MBA_Entrega_Modulo_3\\EducationHub\\src\\EducationHub.API\\Controllers\\AulasController.cs",
-              "RelativeDocumentMoniker": "src\\EducationHub.API\\Controllers\\AulasController.cs",
-              "ToolTip": "C:\\Git\\MBA_Entrega_Modulo_3\\EducationHub\\src\\EducationHub.API\\Controllers\\AulasController.cs",
-              "RelativeToolTip": "src\\EducationHub.API\\Controllers\\AulasController.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAQwD0AAABDAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-05T01:57:33.948Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "IdentityConfig.cs",
-              "DocumentMoniker": "C:\\Git\\MBA_Entrega_Modulo_3\\EducationHub\\src\\EducationHub.API\\Configuration\\IdentityConfig.cs",
-              "RelativeDocumentMoniker": "src\\EducationHub.API\\Configuration\\IdentityConfig.cs",
-              "ToolTip": "C:\\Git\\MBA_Entrega_Modulo_3\\EducationHub\\src\\EducationHub.API\\Configuration\\IdentityConfig.cs",
-              "RelativeToolTip": "src\\EducationHub.API\\Configuration\\IdentityConfig.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-05T02:53:33.029Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Git\\MBA_Entrega_Modulo_3\\EducationHub\\src\\EducationHub.API\\appsettings.json",
-              "RelativeDocumentMoniker": "src\\EducationHub.API\\appsettings.json",
-              "ToolTip": "C:\\Git\\MBA_Entrega_Modulo_3\\EducationHub\\src\\EducationHub.API\\appsettings.json",
-              "RelativeToolTip": "src\\EducationHub.API\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-11-05T02:11:32.156Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "appsettings.Development.json",
-              "DocumentMoniker": "C:\\Git\\MBA_Entrega_Modulo_3\\EducationHub\\src\\EducationHub.API\\appsettings.Development.json",
-              "RelativeDocumentMoniker": "src\\EducationHub.API\\appsettings.Development.json",
-              "ToolTip": "C:\\Git\\MBA_Entrega_Modulo_3\\EducationHub\\src\\EducationHub.API\\appsettings.Development.json",
-              "RelativeToolTip": "src\\EducationHub.API\\appsettings.Development.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-11-05T02:10:20.877Z"
             }
           ]
         }

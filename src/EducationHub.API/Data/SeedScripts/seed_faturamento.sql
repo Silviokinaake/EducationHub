@@ -1,0 +1,1 @@
+﻿INSERT INTO Pagamentos (Id, AlunoId, PreMatriculaId, Valor, DataPagamento, Status, TokenCartao, NumeroCartaoMascarado) VALUES ('26239b94-8bb1-4cde-b62b-130193838b8a', 'a4675349-e4b9-4086-9618-a604f4aa08a3', 'f9e08644-45c2-49fa-9590-8c53c2616320', 1500, '2025-11-12 02:32:07', 0, '', '');

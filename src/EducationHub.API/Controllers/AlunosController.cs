@@ -1,8 +1,6 @@
-﻿using System;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using EducationHub.Alunos.Application.Services;
+﻿using EducationHub.Alunos.Application.Services;
 using EducationHub.Alunos.Application.ViewModels;
+using Microsoft.AspNetCore.Mvc;
 
 namespace EducationHub.API.Controllers
 {

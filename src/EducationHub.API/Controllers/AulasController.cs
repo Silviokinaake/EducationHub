@@ -14,6 +14,18 @@ namespace EducationHub.API.Controllers
         {
             _aulaAppService = aulaAppService;
         }
+        /// <summary>
+        /// Cria uma nova aula.
+        /// </summary>
+        [HttpPost]
+        public async Task<IActionResult> AdicionarAulaAsync([FromBody] AulaViewModel aulaViewModel)
+        {
+            if (!ModelState.IsValid) return BadRequest(ModelState);
+
+            await _aulaAppService.AdicionarAsync(aulaViewModel);
+
+            return CreatedAtRoute("GetAulaById", new { id = aulaViewModel.Id }, aulaViewModel);
+        }
 
         /// <summary>
         /// Obtém todas as aulas de um curso específico.
@@ -34,19 +46,6 @@ namespace EducationHub.API.Controllers
             var aula = await _aulaAppService.ObterPorIdAsync(id);
             if (aula is null) return NotFound();
             return Ok(aula);
-        }
-
-        /// <summary>
-        /// Cria uma nova aula.
-        /// </summary>
-        [HttpPost]
-        public async Task<IActionResult> AdicionarAulaAsync([FromBody] AulaViewModel aulaViewModel)
-        {
-            if (!ModelState.IsValid) return BadRequest(ModelState);
-
-            await _aulaAppService.AdicionarAsync(aulaViewModel);
-
-            return CreatedAtRoute("GetAulaById", new { id = aulaViewModel.Id }, aulaViewModel);
         }
 
         /// <summary>

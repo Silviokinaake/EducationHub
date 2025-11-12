@@ -1,7 +1,7 @@
 ﻿using EducationHub.Conteudo.Data;
 using Microsoft.EntityFrameworkCore;
 
-namespace EducationHub.API.Configuration
+namespace EducationHub.API.Configurations
 {
     public static class IdentityConfig
     {

@@ -1,4 +1,6 @@
-﻿namespace EducationHub.Faturamento.Domain.Interfaces
+﻿using EducationHub.Faturamento.Domain.Entidades;
+
+namespace EducationHub.Faturamento.Domain.Interfaces
 {
     public interface ICardTokenizationServico
     {
