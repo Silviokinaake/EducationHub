@@ -1,5 +1,6 @@
 ﻿using EducationHub.Conteudo.Application.Services;
 using EducationHub.Conteudo.Application.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EducationHub.API.Controllers
@@ -16,7 +17,9 @@ namespace EducationHub.API.Controllers
         }
         /// <summary>
         /// Cria uma nova aula.
-        /// </summary>
+        /// </summary
+        
+        //[Authorize(Roles = "Admin")]
         [HttpPost]
         public async Task<IActionResult> AdicionarAulaAsync([FromBody] AulaViewModel aulaViewModel)
         {

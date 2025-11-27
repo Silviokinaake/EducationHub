@@ -1,10 +1,12 @@
 ﻿using EducationHub.Faturamento.Application.Services;
 using EducationHub.Faturamento.Application.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.ComponentModel.DataAnnotations;
 
 namespace EducationHub.API.Controllers
-{
+{ 
+    //[Authorize]
     [ApiController]
     [Route("api/[controller]")]
     public class FaturamentosController : ControllerBase

@@ -228,6 +228,68 @@
         }
       }
     },
+    "/api/Auth/register": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegisterUserViewModel"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegisterUserViewModel"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegisterUserViewModel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Auth/login": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginUserViewModel"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginUserViewModel"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginUserViewModel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Cursos": {
       "get": {
         "tags": [
@@ -603,6 +665,26 @@
         },
         "additionalProperties": false
       },
+      "LoginUserViewModel": {
+        "required": [
+          "email",
+          "password"
+        ],
+        "type": "object",
+        "properties": {
+          "email": {
+            "minLength": 1,
+            "type": "string",
+            "format": "email"
+          },
+          "password": {
+            "maxLength": 25,
+            "minLength": 8,
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
       "RealizarPagamentoRequest": {
         "required": [
           "alunoId",
@@ -630,7 +712,58 @@
           }
         },
         "additionalProperties": false
+      },
+      "RegisterUserViewModel": {
+        "required": [
+          "dataNascimento",
+          "email",
+          "nome",
+          "password"
+        ],
+        "type": "object",
+        "properties": {
+          "nome": {
+            "maxLength": 50,
+            "minLength": 3,
+            "type": "string"
+          },
+          "email": {
+            "minLength": 1,
+            "type": "string",
+            "format": "email"
+          },
+          "password": {
+            "maxLength": 25,
+            "minLength": 8,
+            "type": "string"
+          },
+          "confirmPassword": {
+            "type": "string",
+            "nullable": true
+          },
+          "dataNascimento": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "ehAdministrador": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "securitySchemes": {
+      "Bearer": {
+        "type": "apiKey",
+        "description": "Insira o token JWT desta maneira: Bearer {seu token}",
+        "name": "Authorization",
+        "in": "header"
       }
     }
-  }
+  },
+  "security": [
+    {
+      "Bearer": [ ]
+    }
+  ]
 }

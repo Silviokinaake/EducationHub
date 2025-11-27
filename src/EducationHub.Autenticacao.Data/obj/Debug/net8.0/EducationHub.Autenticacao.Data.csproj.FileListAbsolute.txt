@@ -1,0 +1,15 @@
+C:\Git\MBA_Entrega_Modulo_3\EducationHub\src\EducationHub.Autenticacao.Data\bin\Debug\net8.0\EducationHub.Autenticacao.Data.deps.json
+C:\Git\MBA_Entrega_Modulo_3\EducationHub\src\EducationHub.Autenticacao.Data\bin\Debug\net8.0\EducationHub.Autenticacao.Data.runtimeconfig.json
+C:\Git\MBA_Entrega_Modulo_3\EducationHub\src\EducationHub.Autenticacao.Data\bin\Debug\net8.0\EducationHub.Autenticacao.Data.dll
+C:\Git\MBA_Entrega_Modulo_3\EducationHub\src\EducationHub.Autenticacao.Data\bin\Debug\net8.0\EducationHub.Autenticacao.Data.pdb
+C:\Git\MBA_Entrega_Modulo_3\EducationHub\src\EducationHub.Autenticacao.Data\obj\Debug\net8.0\EducationHub.Autenticacao.Data.csproj.AssemblyReference.cache
+C:\Git\MBA_Entrega_Modulo_3\EducationHub\src\EducationHub.Autenticacao.Data\obj\Debug\net8.0\EducationHub.Autenticacao.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Git\MBA_Entrega_Modulo_3\EducationHub\src\EducationHub.Autenticacao.Data\obj\Debug\net8.0\EducationHub.Autenticacao.Data.AssemblyInfoInputs.cache
+C:\Git\MBA_Entrega_Modulo_3\EducationHub\src\EducationHub.Autenticacao.Data\obj\Debug\net8.0\EducationHub.Autenticacao.Data.AssemblyInfo.cs
+C:\Git\MBA_Entrega_Modulo_3\EducationHub\src\EducationHub.Autenticacao.Data\obj\Debug\net8.0\EducationHub.Autenticacao.Data.csproj.CoreCompileInputs.cache
+C:\Git\MBA_Entrega_Modulo_3\EducationHub\src\EducationHub.Autenticacao.Data\obj\Debug\net8.0\EducationHub.Autenticacao.Data.sourcelink.json
+C:\Git\MBA_Entrega_Modulo_3\EducationHub\src\EducationHub.Autenticacao.Data\obj\Debug\net8.0\EducationHub.Autenticacao.Data.dll
+C:\Git\MBA_Entrega_Modulo_3\EducationHub\src\EducationHub.Autenticacao.Data\obj\Debug\net8.0\refint\EducationHub.Autenticacao.Data.dll
+C:\Git\MBA_Entrega_Modulo_3\EducationHub\src\EducationHub.Autenticacao.Data\obj\Debug\net8.0\EducationHub.Autenticacao.Data.pdb
+C:\Git\MBA_Entrega_Modulo_3\EducationHub\src\EducationHub.Autenticacao.Data\obj\Debug\net8.0\EducationHub.Autenticacao.Data.genruntimeconfig.cache
+C:\Git\MBA_Entrega_Modulo_3\EducationHub\src\EducationHub.Autenticacao.Data\obj\Debug\net8.0\ref\EducationHub.Autenticacao.Data.dll
