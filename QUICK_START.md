@@ -12,7 +12,7 @@
 
 ```bash
 # Clonar o repositório
-git clone <url-do-repositorio>
+git clone https://github.com/Silviokinaake/EducationHub
 cd EducationHub
 
 # Restaurar dependências
@@ -30,9 +30,9 @@ dotnet run
 ```
 
 A API estará disponível em:
-- HTTPS: `https://localhost:7001`
-- HTTP: `http://localhost:5042`
-- Swagger: `https://localhost:7001/swagger/index.html`
+- HTTP: `http://localhost:5137`
+- HTTPS: `https://localhost:7238`
+- Swagger: `http://localhost:5137/swagger/index.html`
 
 ### 4. Banco de Dados
 
@@ -52,7 +52,7 @@ Os dados serão criados em:
 
 #### Opção 1: Via Swagger (Recomendado)
 
-1. Acesse: `https://localhost:7001/swagger/index.html`
+1. Acesse: `http://localhost:5137/swagger/index.html`
 2. Use o endpoint `/api/auth/register` para criar um usuário
 3. Use o endpoint `/api/auth/login` para obter o token
 4. Clique em "Authorize" e cole o token
@@ -62,17 +62,17 @@ Os dados serão criados em:
 
 ```bash
 # Registrar usuário
-curl -X POST "https://localhost:7001/api/auth/register" \
+curl -X POST "http://localhost:5137/api/auth/register" \
   -H "Content-Type: application/json" \
   -d '{"email":"teste@email.com","password":"Teste@123","confirmPassword":"Teste@123"}'
 
 # Fazer login
-curl -X POST "https://localhost:7001/api/auth/login" \
+curl -X POST "http://localhost:5137/api/auth/login" \
   -H "Content-Type: application/json" \
   -d '{"email":"teste@email.com","password":"Teste@123"}'
 
 # Obter cursos (usar o token retornado no login)
-curl -X GET "https://localhost:7001/api/cursos" \
+curl -X GET "http://localhost:5137/api/cursos" \
   -H "Authorization: Bearer SEU_TOKEN_AQUI"
 ```
 
