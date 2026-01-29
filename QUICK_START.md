@@ -30,8 +30,6 @@ dotnet run
 ```
 
 A API estará disponível em:
-- HTTP: `http://localhost:5137`
-- HTTPS: `https://localhost:7238`
 - Swagger: `http://localhost:5137/swagger/index.html`
 
 ### 4. Banco de Dados

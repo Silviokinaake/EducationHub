@@ -35,6 +35,8 @@ namespace EducationHub.Conteudo.Application.Commands
                 conteudoProgramatico
             );
 
+            request.Id = curso.Id;
+
             _cursoRepositorio.Adicionar(curso);
             return await _cursoRepositorio.UnitOfWork.Commit();
         }

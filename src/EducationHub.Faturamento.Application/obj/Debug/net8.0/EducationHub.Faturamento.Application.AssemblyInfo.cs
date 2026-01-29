@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("EducationHub.Faturamento.Application")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a85a0fc26aba069d50d774624d3153212406bb7b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b4c886eb44a2c1af7da3e55e8287ecd88528a922")]
 [assembly: System.Reflection.AssemblyProductAttribute("EducationHub.Faturamento.Application")]
 [assembly: System.Reflection.AssemblyTitleAttribute("EducationHub.Faturamento.Application")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

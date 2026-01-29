@@ -423,3 +423,98 @@ A documentação da API está disponível através do Swagger. Após iniciar a A
 
 http://localhost:5137/swagger/index.html
 
+
+
+## EXEMPLOS PARA COPIR E COLAR DURANTE OS TESTES
+
+Segue exemplos de registros para agilizar a execução dos testes dos endpoints.
+
+### Registro de Administrador
+```json
+{
+  "email": "adminteste@educationhub.com",
+  "password": "Admin@123",
+  "confirmPassword": "Admin@123",
+  "ehAdministrador": true
+}
+```
+
+### Login de Administrador
+```json
+{
+  "email": "adminTeste@educationhub.com",
+  "password": "Admin@123"
+}
+```
+
+### Registro de Aluno
+```json
+{
+  "email": "alunoteste@educationhub.com",
+  "password": "Aluno@123",
+  "confirmPassword": "Aluno@123",
+  "ehAdministrador": false
+}
+```
+
+### Login de Aluno
+```json
+{
+  "email": "alunoteste@educationhub.com",
+  "password": "Aluno@123"
+}
+```
+
+### Cadastro de um Curso
+```json
+{
+  "titulo": "Docker",
+  "descricao": "Curso prático e introdutório sobre Docker, abordando conceitos fundamentais de conteinerização, criação de imagens, gerenciamento de containers e uso do Docker em ambientes de desenvolvimento e produção.",
+  "cargaHoraria": "24:00:00",
+  "instrutor": "Carlos Henrique Silva",
+  "nivel": "Intermediário",
+  "valor": 500.00,
+  "conteudoProgramatico": {
+    "objetivo": "Capacitar o aluno a utilizar o Docker para criar, configurar, gerenciar e distribuir aplicações em containers de forma eficiente e padronizada.",
+    "conteudo": "Introdução à conteinerização; Conceitos fundamentais do Docker; Arquitetura do Docker; Instalação e configuração do Docker; Imagens e containers; Dockerfile; Docker Hub e registries privados; Volumes e redes; Docker Compose; Boas práticas; Introdução ao uso do Docker em ambientes de produção.",
+    "metodologia": "Aulas expositivas com demonstrações práticas, exercícios guiados, estudos de caso e desenvolvimento de projetos práticos utilizando Docker.",
+    "bibliografia": "Merkel, Dirk. Docker: Up & Running. O'Reilly Media. Documentação oficial do Docker (docs.docker.com)."
+  }
+}
+```
+
+### Cadastro de uma Aula
+```json
+{
+  "cursoId": "Inserir o Id do curso que foi gerado anteriormente",
+  "titulo": "Introdução ao Docker e Primeiros Containers",
+  "conteudoAula": "Nesta aula, o aluno aprenderá os conceitos fundamentais do Docker, entendendo o que são containers e como eles se diferenciam de máquinas virtuais. Será apresentada a arquitetura do Docker, incluindo Docker Engine, imagens e containers. Ao final da aula, o aluno realizará a instalação do Docker e executará seus primeiros comandos básicos, como docker pull, docker run, docker ps e docker stop.",
+  "materialDeApoio": "Slides da aula em PDF, documentação oficial do Docker, vídeo demonstrativo de instalação e repositório GitHub com exemplos práticos.",
+  "duracao": "05:00:00"
+}
+```
+
+### Cadastro de um Aluno
+```json
+{
+  "nome": "Aluno Teste",
+  "email": "alunoteste@educationhub.com",
+  "cpf": "012345678901",
+  "dataNascimento": "2000-01-29T17:06:38.692Z"
+}
+```
+
+### Fazer um Pagamento
+```json
+{
+  "alunoId": "Insira o Id do aluno",
+  "matriculaId": "Insira a matrícula gerada",
+  "valor": "Insira o valor exato do curso",
+  "dadosCartao": {
+    "nomeTitular": "Pai do Aluno Teste",
+    "numero": "1234567890123",
+    "validade": "10/27",
+    "cvv": "123"
+  }
+}
+```

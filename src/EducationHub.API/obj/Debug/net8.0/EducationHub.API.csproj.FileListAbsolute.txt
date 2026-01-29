@@ -202,3 +202,4 @@ C:\Git\MBA_Entrega_Modulo_3\EducationHub\src\EducationHub.API\obj\Debug\net8.0\r
 C:\Git\MBA_Entrega_Modulo_3\EducationHub\src\EducationHub.API\obj\Debug\net8.0\EducationHub.API.pdb
 C:\Git\MBA_Entrega_Modulo_3\EducationHub\src\EducationHub.API\obj\Debug\net8.0\EducationHub.API.genruntimeconfig.cache
 C:\Git\MBA_Entrega_Modulo_3\EducationHub\src\EducationHub.API\obj\Debug\net8.0\ref\EducationHub.API.dll
+C:\Git\MBA_Entrega_Modulo_3\EducationHub\src\EducationHub.API\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

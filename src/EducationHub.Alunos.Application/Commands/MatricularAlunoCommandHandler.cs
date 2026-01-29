@@ -38,7 +38,7 @@ namespace EducationHub.Alunos.Application.Commands
             var matricula = new Matricula(
                 cursoId: message.CursoId,
                 alunoId: message.AlunoId,
-                valor: (decimal)curso.CargaHoraria.TotalHours * 50m, // Exemplo: R$ 50 por hora
+                valor: curso.Valor,
                 dataMatricula: DateTime.UtcNow
             );
 
@@ -65,7 +65,7 @@ namespace EducationHub.Alunos.Application.Commands
                     Descricao = curso.Descricao,
                     Instrutor = curso.Instrutor,
                     Nivel = curso.Nivel,
-                    Valor = (decimal)curso.CargaHoraria.TotalHours * 50m
+                    Valor = curso.Valor
                 }
             };
         }
