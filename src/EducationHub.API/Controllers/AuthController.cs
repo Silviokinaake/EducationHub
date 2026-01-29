@@ -15,16 +15,19 @@ namespace EducationHub.API.Controllers
     {
         private readonly SignInManager<IdentityUser> _signInManager;
         private readonly UserManager<IdentityUser> _userManager;
+        private readonly RoleManager<IdentityRole> _roleManager;
         private readonly JwtSettings _jwtSettings;
         private SecurityToken token;
 
         public AuthController(
                             SignInManager<IdentityUser> signInManager,
                             UserManager<IdentityUser> userManager,
+                            RoleManager<IdentityRole> roleManager,
                             IOptions<JwtSettings> jwtSettings)
         {
             _signInManager = signInManager;
             _userManager = userManager;
+            _roleManager = roleManager;
             _jwtSettings = jwtSettings.Value;
         }
 
@@ -44,8 +47,20 @@ namespace EducationHub.API.Controllers
 
             if (result.Succeeded)
             {
+                // Criar a role Administrador se não existir
+                if (!await _roleManager.RoleExistsAsync("Administrador"))
+                {
+                    await _roleManager.CreateAsync(new IdentityRole("Administrador"));
+                }
+
+                // Adicionar role ao usuário se foi solicitado
+                if (registerUser.EhAdministrador)
+                {
+                    await _userManager.AddToRoleAsync(identitiyUser, "Administrador");
+                }
+
                 await _signInManager.SignInAsync(identitiyUser, isPersistent: false);
-                return Ok(GerarJwt(registerUser.Email));
+                return Ok(await GerarJwt(registerUser.Email));
             }
 
             return Problem("Falha ao registrar o usuário");
@@ -59,7 +74,7 @@ namespace EducationHub.API.Controllers
             var result = await _signInManager.PasswordSignInAsync(loginUser.Email, loginUser.Password, false, true);
             if (result.Succeeded)
             {
-                return Ok(GerarJwt(loginUser.Email));
+                return Ok(await GerarJwt(loginUser.Email));
             }
             return Unauthorized("Usuário ou senha inválidos");
         }

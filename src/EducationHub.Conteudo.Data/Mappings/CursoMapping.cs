@@ -28,8 +28,9 @@ namespace EducationHub.Conteudo.Data.Mappings
                 .HasColumnType("varchar(100)")
                 .HasMaxLength(100);
 
-            builder.Property(c => c.Ativo)
-                .IsRequired();
+            builder.Property(c => c.Situacao)
+                .IsRequired()
+                .HasConversion<int>();
 
             builder.Property(c => c.Nivel)
                 .IsRequired()

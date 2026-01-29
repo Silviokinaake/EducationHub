@@ -7,10 +7,13 @@ namespace EducationHub.Alunos.Domain.Repositorio
     {
         IUnitOfWork UnitOfWork { get; }
         Task<Aluno> ObterPorIdAsync(Guid id);
+        Task<Aluno> ObterPorUsuarioIdAsync(Guid usuarioId);
         Task<IEnumerable<Aluno>> ObterTodosAsync();
         Task AdicionarAsync(Aluno aluno);
-        Task AtualizarAsync(Aluno aluno);
-
+        void Atualizar(Aluno aluno);
+        
+        Task<Aluno?> ObterPorCpf(string cpf);
+        void Adicionar(Aluno aluno);
 
         Task<Matricula> ObterMatriculaPorIdAsync(Guid matriculaId);
         Task<IEnumerable<Matricula>> ObterMatriculasPorAlunoAsync(Guid alunoId);

@@ -4,6 +4,7 @@ namespace EducationHub.Alunos.Domain.Entidades
 {
     public class HistoricoAprendizado
     {
+        public Guid Id { get; private set; }
         public Guid CursoId { get; private set; }
         public double ProgressoPercentual { get; private set; }
         public DateTime DataUltimaAtualizacao { get; private set; }
@@ -12,6 +13,7 @@ namespace EducationHub.Alunos.Domain.Entidades
 
         public HistoricoAprendizado(Guid cursoId, double progressoPercentual)
         {
+            Id = Guid.NewGuid();
             CursoId = cursoId;
             AtualizarProgresso(progressoPercentual);
         }

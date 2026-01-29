@@ -24,6 +24,10 @@ namespace EducationHub.Faturamento.Domain.Services
 
         public async Task<Pagamento> RealizarPagamentoAsync(Guid alunoId, Guid preMatriculaId, decimal valor, DadosCartao dadosCartao)
         {
+            // VALIDAÇÃO ANTECIPADA: Verificar status e valor da matrícula ANTES de processar o pagamento
+            // Apenas valida, NÃO ativa a matrícula ainda
+            await _matriculaServico.ValidarPagamentoMatriculaAsync(preMatriculaId, valor);
+
             var pagamento = new Pagamento(alunoId, preMatriculaId, valor, dadosCartao);
 
             await _pagamentoRepositorio.AdicionarAsync(pagamento);
@@ -62,11 +66,14 @@ namespace EducationHub.Faturamento.Domain.Services
 
             if (confirmado)
             {
+                // ATIVAR MATRÍCULA ANTES DE CONFIRMAR O PAGAMENTO
+                // Se a ativação falhar (ex: matrícula já ativa), o pagamento não será confirmado
+                await _matriculaServico.AtivarMatriculaAsync(preMatriculaId, valor);
+
+                // Somente após ativação bem-sucedida, confirma o pagamento
                 pagamento.Confirmar();
                 await _pagamentoRepositorio.AtualizarAsync(pagamento);
                 await _pagamentoRepositorio.UnitOfWork.Commit();
-
-                await _matriculaServico.AtivarMatriculaAsync(preMatriculaId);
             }
             else
             {

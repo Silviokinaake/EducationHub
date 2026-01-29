@@ -11,5 +11,7 @@ namespace EducationHub.Faturamento.Domain.Interfaces
         Task<Pagamento?> ObterPorIdAsync(Guid id);
         Task AdicionarAsync(Pagamento pagamento);
         Task AtualizarAsync(Pagamento pagamento);
+        
+        void Adicionar(Pagamento pagamento);
     }
 }

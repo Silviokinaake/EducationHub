@@ -2,7 +2,7 @@
 
 namespace EducationHub.Alunos.Domain.Entidades
 {
-    public class Certificado: Entity
+    public class Certificado: Entity, IAggregateRoot
     {
         public Guid AlunoId { get; private set; }
         public Guid CursoId { get; private set; }

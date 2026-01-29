@@ -1,7 +1,9 @@
 ﻿using EducationHub.Alunos.Data;
 using EducationHub.Conteudo.Data;
 using EducationHub.Faturamento.Data;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Infrastructure;
 using System.Text;
 
 namespace EducationHub.API.Configurations
@@ -29,14 +31,93 @@ namespace EducationHub.API.Configurations
             var alunoContext = scope.ServiceProvider.GetRequiredService<AlunoDbContext>();
             var conteudoContext = scope.ServiceProvider.GetRequiredService<ConteudoDbContext>();
             var faturamentoContext = scope.ServiceProvider.GetRequiredService<FaturamentoDbContext>();
+            
+            var userManager = scope.ServiceProvider.GetRequiredService<UserManager<IdentityUser>>();
+            var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
 
             if (env.IsDevelopment())
             {
-                await alunoContext.Database.MigrateAsync();
-                await conteudoContext.Database.MigrateAsync();
-                await faturamentoContext.Database.MigrateAsync();
+                // Apenas executa migrations se for banco relacional (não InMemory para testes)
+                if (!alunoContext.Database.ProviderName!.Contains("InMemory"))
+                    await alunoContext.Database.MigrateAsync();
+                    
+                if (!conteudoContext.Database.ProviderName!.Contains("InMemory"))
+                    await conteudoContext.Database.MigrateAsync();
+                    
+                if (!faturamentoContext.Database.ProviderName!.Contains("InMemory"))
+                    await faturamentoContext.Database.MigrateAsync();
 
+                // Criar usuário administrador padrão
+                await EnsureSeedIdentityData(userManager, roleManager);
+                
                 await EnsureSeedProducts(alunoContext, conteudoContext, faturamentoContext);
+            }
+        }
+
+        private static async Task EnsureSeedIdentityData(UserManager<IdentityUser> userManager, RoleManager<IdentityRole> roleManager)
+        {
+            // Criar role Administrador se não existir
+            if (!await roleManager.RoleExistsAsync("Administrador"))
+            {
+                await roleManager.CreateAsync(new IdentityRole("Administrador"));
+            }
+
+            // Criar usuário admin padrão se não existir
+            const string adminEmail = "admin@educationhub.com";
+            const string adminPassword = "Admin@123";
+            var adminUser = await userManager.FindByEmailAsync(adminEmail);
+            
+            if (adminUser == null)
+            {
+                adminUser = new IdentityUser
+                {
+                    UserName = adminEmail,
+                    Email = adminEmail,
+                    EmailConfirmed = true
+                };
+                
+                var result = await userManager.CreateAsync(adminUser, adminPassword);
+                
+                if (result.Succeeded)
+                {
+                    await userManager.AddToRoleAsync(adminUser, "Administrador");
+                }
+            }
+            else
+            {
+                // Se o usuário já existe, garante que tem a role e senha correta
+                var roles = await userManager.GetRolesAsync(adminUser);
+                if (!roles.Contains("Administrador"))
+                {
+                    await userManager.AddToRoleAsync(adminUser, "Administrador");
+                }
+                
+                // Atualiza a senha removendo a antiga e adicionando nova
+                await userManager.RemovePasswordAsync(adminUser);
+                await userManager.AddPasswordAsync(adminUser, adminPassword);
+            }
+
+            // Criar usuário aluno padrão se não existir
+            const string alunoEmail = "aluno1@educationhub.com";
+            const string alunoPassword = "Aluno1@123";
+            var alunoUser = await userManager.FindByEmailAsync(alunoEmail);
+            
+            if (alunoUser == null)
+            {
+                alunoUser = new IdentityUser
+                {
+                    UserName = alunoEmail,
+                    Email = alunoEmail,
+                    EmailConfirmed = true
+                };
+                
+                await userManager.CreateAsync(alunoUser, alunoPassword);
+            }
+            else
+            {
+                // Se o usuário já existe, atualiza a senha
+                await userManager.RemovePasswordAsync(alunoUser);
+                await userManager.AddPasswordAsync(alunoUser, alunoPassword);
             }
         }
 
@@ -45,20 +126,16 @@ namespace EducationHub.API.Configurations
             // Alunos / Matrículas / Certificados
             if (!alunoContext.Alunos.Any())
             {
-                var alunoId = Guid.NewGuid();
-                var usuarioId = Guid.NewGuid();
-                var aluno = new Alunos.Domain.Entidades.Aluno(alunoId, usuarioId, "Aluno Teste", "aluno.teste@example.com", DateTime.UtcNow.AddYears(-25));
-                await alunoContext.Alunos.AddAsync(aluno);
-
-                // Criar matrícula pendente
-                var cursoId = Guid.NewGuid();
-                var matricula = new Alunos.Domain.Entidades.Matricula(cursoId, alunoId, 1500m, DateTime.UtcNow);
-                await alunoContext.Matriculas.AddAsync(matricula);
-
-                // Exemplo de certificado (normalmente gerado após conclusão)
-                var certificado = new Alunos.Domain.Entidades.Certificado(alunoId, cursoId, "Curso Exemplo", DateTime.UtcNow);
-                await alunoContext.Certificados.AddAsync(certificado);
-
+                // Criar 4 alunos de exemplo
+                var alunos = new[]
+                {
+                    new Alunos.Domain.Entidades.Aluno(Guid.NewGuid(), Guid.NewGuid(), "Aluno1 Teste", "aluno1@example.com", DateTime.UtcNow.AddYears(-26)),
+                    new Alunos.Domain.Entidades.Aluno(Guid.NewGuid(), Guid.NewGuid(), "Aluno2 Teste", "aluno2@example.com", DateTime.UtcNow.AddYears(-25)),
+                    new Alunos.Domain.Entidades.Aluno(Guid.NewGuid(), Guid.NewGuid(), "Aluno3 Teste", "aluno3@example.com", DateTime.UtcNow.AddYears(-25)),
+                    new Alunos.Domain.Entidades.Aluno(Guid.NewGuid(), Guid.NewGuid(), "Alun4 Teste", "aluno4@example.com", DateTime.UtcNow.AddYears(-25))
+                };
+                
+                await alunoContext.Alunos.AddRangeAsync(alunos);
                 await alunoContext.SaveChangesAsync();
             }
 
@@ -78,14 +155,15 @@ namespace EducationHub.API.Configurations
                     TimeSpan.FromHours(10),
                     "Prof. Exemplo",
                     "Iniciante",
+                    500.00m,
                     cp);
 
                 await conteudoContext.Cursos.AddAsync(curso);
                 await conteudoContext.SaveChangesAsync();
 
                 // Após salvar curso, criar aulas vinculadas
-                var aula1 = new Conteudo.Domain.Entidades.Aula("Boas-vindas", "Apresentação do curso", "Slides", TimeSpan.FromMinutes(30), curso.Id);
-                var aula2 = new Conteudo.Domain.Entidades.Aula("Sintaxe básica", "Variáveis, tipos e operadores", "PDF", TimeSpan.FromMinutes(60), curso.Id);
+                var aula1 = new Conteudo.Domain.Entidades.Aula("Boas-vindas", "Apresentação do curso", "Slides de apresentação do curso e material introdutório", TimeSpan.FromMinutes(30), curso.Id);
+                var aula2 = new Conteudo.Domain.Entidades.Aula("Sintaxe básica", "Variáveis, tipos e operadores", "Apostila em PDF com exemplos de código", TimeSpan.FromMinutes(60), curso.Id);
 
                 await conteudoContext.Aulas.AddRangeAsync(aula1, aula2);
                 await conteudoContext.SaveChangesAsync();
@@ -133,7 +211,7 @@ namespace EducationHub.API.Configurations
                 foreach (var c in conteudoContext.Cursos.AsNoTracking().ToList())
                 {
                     sbConteudo.AppendLine(
-                        $"INSERT INTO Cursos (Id, Titulo, Descricao, CargaHoraria, Instrutor, Ativo, Nivel, ConteudoProgramatico_Objetivo, ConteudoProgramatico_Conteudo, ConteudoProgramatico_Metodologia, ConteudoProgramatico_Bibliografia) VALUES ('{c.Id}', '{c.Titulo.Replace("'", "''")}', '{c.Descricao.Replace("'", "''")}', '{c.CargaHoraria}', '{c.Instrutor.Replace("'", "''")}', {(c.Ativo ? 1 : 0)}, '{c.Nivel}', '{c.ConteudoProgramatico.Objetivo.Replace("'", "''")}', '{c.ConteudoProgramatico.Conteudo.Replace("'", "''")}', '{c.ConteudoProgramatico.Metodologia.Replace("'", "''")}', '{c.ConteudoProgramatico.Bibliografia.Replace("'", "''")}');");
+                        $"INSERT INTO Cursos (Id, Titulo, Descricao, CargaHoraria, Instrutor, Situacao, Nivel, ConteudoProgramatico_Objetivo, ConteudoProgramatico_Conteudo, ConteudoProgramatico_Metodologia, ConteudoProgramatico_Bibliografia) VALUES ('{c.Id}', '{c.Titulo.Replace("'", "''")}', '{c.Descricao.Replace("'", "''")}', '{c.CargaHoraria}', '{c.Instrutor.Replace("'", "''")}', {(int)c.Situacao}, '{c.Nivel}', '{c.ConteudoProgramatico.Objetivo.Replace("'", "''")}', '{c.ConteudoProgramatico.Conteudo.Replace("'", "''")}', '{c.ConteudoProgramatico.Metodologia.Replace("'", "''")}', '{c.ConteudoProgramatico.Bibliografia.Replace("'", "''")}');");
                 }
                 foreach (var l in conteudoContext.Aulas.AsNoTracking().ToList())
                 {

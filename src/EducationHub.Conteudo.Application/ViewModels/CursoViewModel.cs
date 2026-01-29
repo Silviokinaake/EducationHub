@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using EducationHub.Conteudo.Domain.Enums;
 
 namespace EducationHub.Conteudo.Application.ViewModels
     {
@@ -21,11 +22,15 @@ namespace EducationHub.Conteudo.Application.ViewModels
             [StringLength(100, MinimumLength = 3, ErrorMessage = "O campo Instrutor deve ter entre 3 e 100 caracteres.")]
             public string Instrutor { get; set; }
 
-            public bool Ativo { get; set; }
+            public SituacaoCurso Situacao { get; set; }
 
             [Required(ErrorMessage = "O campo Nível é obrigatório.")]
             [StringLength(50, MinimumLength = 3, ErrorMessage = "O campo Nível deve ter entre 3 e 50 caracteres.")]
             public string Nivel { get; set; }
+
+            [Required(ErrorMessage = "O valor do curso é obrigatório.")]
+            [Range(0, double.MaxValue, ErrorMessage = "O valor do curso deve ser maior ou igual a zero.")]
+            public decimal Valor { get; set; }
 
             [Required(ErrorMessage = "O conteúdo programático é obrigatório.")]
             public ConteudoProgramaticoViewModel ConteudoProgramatico { get; set; }

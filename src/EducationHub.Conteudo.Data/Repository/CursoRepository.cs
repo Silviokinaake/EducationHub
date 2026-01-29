@@ -40,6 +40,23 @@ namespace EducationHub.Conteudo.Data.Repository
             await Task.CompletedTask;
         }
 
+        public Task<Curso> ObterPorId(Guid id)
+        {
+            return _context.Cursos
+                .Include(c => c.Aulas)
+                .FirstOrDefaultAsync(c => c.Id == id);
+        }
+
+        public void Adicionar(Curso curso)
+        {
+            _context.Cursos.Add(curso);
+        }
+
+        public void Atualizar(Curso curso)
+        {
+            _context.Cursos.Update(curso);
+        }
+
         public void Dispose()
         {
             _context?.Dispose();

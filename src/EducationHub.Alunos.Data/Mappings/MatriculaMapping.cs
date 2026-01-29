@@ -34,12 +34,12 @@ namespace EducationHub.Alunos.Data.Mappings
                 m => m.Historico,
                 ha =>
                 {
-                    ha.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    ha.HasKey("Id");
+                    ha.HasKey(h => h.Id);
 
                     ha.WithOwner().HasForeignKey("MatriculaId");
+
+                    ha.Property(h => h.Id)
+                        .IsRequired();
 
                     ha.Property(h => h.CursoId)
                         .IsRequired();

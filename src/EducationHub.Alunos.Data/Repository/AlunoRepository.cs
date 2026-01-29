@@ -25,6 +25,15 @@ namespace EducationHub.Alunos.Data.Repository
                 .FirstOrDefaultAsync(a => a.Id == id);
         }
 
+        public async Task<Aluno> ObterPorUsuarioIdAsync(Guid usuarioId)
+        {
+            return await _context.Alunos
+                .Include(a => a.Matriculas)
+                    .ThenInclude(m => m.Historico)
+                .Include(a => a.Certificados)
+                .FirstOrDefaultAsync(a => a.UsuarioId == usuarioId);
+        }
+
         public async Task<Aluno> ObterPorEmailAsync(string email)
         {
             return await _context.Alunos
@@ -48,10 +57,20 @@ namespace EducationHub.Alunos.Data.Repository
             await _context.Alunos.AddAsync(aluno);
         }
 
-        public async Task AtualizarAsync(Aluno aluno)
+        public void Atualizar(Aluno aluno)
         {
             _context.Alunos.Update(aluno);
-            await Task.CompletedTask;
+        }
+
+        public async Task<Aluno?> ObterPorCpf(string cpf)
+        {
+            return await _context.Alunos
+                .FirstOrDefaultAsync(a => a.Email == cpf); // Note: CPF não está no modelo Aluno, usando Email
+        }
+
+        public void Adicionar(Aluno aluno)
+        {
+            _context.Alunos.Add(aluno);
         }
 
         public async Task<Matricula> ObterMatriculaPorIdAsync(Guid matriculaId)

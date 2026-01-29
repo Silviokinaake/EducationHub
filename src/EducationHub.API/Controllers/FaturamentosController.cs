@@ -1,4 +1,5 @@
-﻿using EducationHub.Faturamento.Application.Services;
+﻿using EducationHub.Core.DomainObjects;
+using EducationHub.Faturamento.Application.Services;
 using EducationHub.Faturamento.Application.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -28,16 +29,24 @@ namespace EducationHub.API.Controllers
         {
             if (!ModelState.IsValid) return BadRequest(ModelState);
 
-            var pagamentoVm = await _pagamentoAppService.RealizarPagamentoAsync(
-                request.AlunoId,
-                request.PreMatriculaId,
-                request.Valor,
-                request.DadosCartao);
+            try
+            {
+                var pagamentoVm = await _pagamentoAppService.RealizarPagamentoAsync(
+                    request.AlunoId,
+                    request.PreMatriculaId,
+                    request.Valor,
+                    request.DadosCartao);
 
-            // Se o serviço retornar nulo por algum motivo, devolve 500
-            if (pagamentoVm is null) return StatusCode(500, "Erro ao processar pagamento.");
+                // Se o serviço retornar nulo por algum motivo, devolve 500
+                if (pagamentoVm is null) return StatusCode(500, "Erro ao processar pagamento.");
 
-            return CreatedAtRoute("GetPagamentoById", new { id = pagamentoVm.Id }, pagamentoVm);
+                return CreatedAtRoute("GetPagamentoById", new { id = pagamentoVm.Id }, pagamentoVm);
+            }
+            catch (DomainException ex)
+            {
+                // Retorna 400 Bad Request para erros de validação de domínio
+                return BadRequest(new { error = ex.Message });
+            }
         }
 
         /// <summary>
@@ -69,7 +78,11 @@ namespace EducationHub.API.Controllers
         public class RealizarPagamentoRequest
         {
             [Required] public Guid AlunoId { get; set; }
-            [Required] public Guid PreMatriculaId { get; set; }
+            
+            [Required] 
+            [System.Text.Json.Serialization.JsonPropertyName("matriculaId")]
+            public Guid PreMatriculaId { get; set; }
+            
             [Required] [Range(0.01, double.MaxValue, ErrorMessage = "Valor deve ser maior que 0")] public decimal Valor { get; set; }
             [Required] public DadosCartaoViewModel DadosCartao { get; set; } = new DadosCartaoViewModel();
         }

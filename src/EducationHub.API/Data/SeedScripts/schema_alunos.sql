@@ -24,6 +24,8 @@ CREATE TABLE "Matriculas" (
     "AlunoId" TEXT NOT NULL,
     "Valor" decimal(18,2) NOT NULL,
     "DataMatricula" datetime2 NOT NULL,
+    "DataAtivacao" TEXT NULL,
+    "DataConclusao" TEXT NULL,
     "Status" INTEGER NOT NULL,
     CONSTRAINT "FK_Matriculas_Alunos_AlunoId" FOREIGN KEY ("AlunoId") REFERENCES "Alunos" ("Id") ON DELETE CASCADE
 );

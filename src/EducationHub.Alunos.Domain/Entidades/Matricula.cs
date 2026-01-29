@@ -1,14 +1,17 @@
 ﻿using EducationHub.Alunos.Domain.Enums;
+using EducationHub.Alunos.Domain.Events;
 using EducationHub.Core.DomainObjects;
 
 namespace EducationHub.Alunos.Domain.Entidades
 {
-    public class Matricula : Entity
+    public class Matricula : Entity, IAggregateRoot
     {
         public Guid CursoId { get; private set; }
         public Guid AlunoId { get; private set; }
         public decimal Valor { get; private set; }
         public DateTime DataMatricula { get; private set; }
+        public DateTime? DataAtivacao { get; private set; }
+        public DateTime? DataConclusao { get; private set; }
         public StatusMatriculaEnum Status { get; private set; }
 
         private readonly List<HistoricoAprendizado> _historico = new();
@@ -44,6 +47,10 @@ namespace EducationHub.Alunos.Domain.Entidades
                 throw new DomainException("Não é possível ativar uma matrícula finalizada ou cancelada.");
 
             Status = StatusMatriculaEnum.Ativa;
+            DataAtivacao = DateTime.UtcNow;
+            
+            // Publicar evento de domínio
+            AdicionarEvento(new MatriculaConfirmadaEvent(Id, AlunoId, CursoId));
         }
 
         public void Concluir()
@@ -52,6 +59,10 @@ namespace EducationHub.Alunos.Domain.Entidades
                 throw new DomainException("Somente matrículas ativas podem ser concluídas.");
 
             Status = StatusMatriculaEnum.Concluida;
+            DataConclusao = DateTime.UtcNow;
+            
+            // Publicar evento de domínio
+            AdicionarEvento(new CursoConcluidoEvent(Id, AlunoId, CursoId));
         }
 
         public void Cancelar()

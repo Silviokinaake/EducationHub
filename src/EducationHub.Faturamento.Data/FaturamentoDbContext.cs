@@ -1,4 +1,5 @@
 ﻿    using EducationHub.Core.Data;
+    using EducationHub.Core.Mediator;
     using EducationHub.Faturamento.Domain.Entidades;
     using Microsoft.EntityFrameworkCore;
     using Microsoft.EntityFrameworkCore.ChangeTracking;
@@ -7,15 +8,21 @@
     {
         public class FaturamentoDbContext : DbContext, IUnitOfWork
         {
-            public FaturamentoDbContext(DbContextOptions<FaturamentoDbContext> options)
+            private readonly IMediatorHandler _mediatorHandler;
+
+            public FaturamentoDbContext(DbContextOptions<FaturamentoDbContext> options, IMediatorHandler mediatorHandler)
                 : base(options)
             {
+                _mediatorHandler = mediatorHandler;
             }
 
             public DbSet<Pagamento> Pagamentos { get; set; }
 
             protected override void OnModelCreating(ModelBuilder modelBuilder)
             {
+                // Ignore a classe base abstrata Event - ela não deve ser mapeada
+                modelBuilder.Ignore<EducationHub.Core.Messages.Event>();
+                
                 foreach (var property in modelBuilder.Model
                              .GetEntityTypes()
                              .SelectMany(e => e.GetProperties())
@@ -42,7 +49,10 @@
                     }
                 }
 
-                return await base.SaveChangesAsync() > 0;
+                var sucesso = await base.SaveChangesAsync() > 0;
+                if (sucesso) await _mediatorHandler.PublicarEventos(this);
+
+                return sucesso;
             }
         }
     }

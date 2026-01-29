@@ -1,4 +1,5 @@
 ﻿using EducationHub.Core.DomainObjects;
+using EducationHub.Conteudo.Domain.Enums;
 
 namespace EducationHub.Conteudo.Domain.Entidades
 {
@@ -8,23 +9,25 @@ namespace EducationHub.Conteudo.Domain.Entidades
         public string Descricao { get; private set; }
         public TimeSpan CargaHoraria { get; private set; }
         public string Instrutor { get; private set; }
-        public bool Ativo { get; private set; }
+        public SituacaoCurso Situacao { get; private set; }
         public string Nivel { get; private set; }
+        public decimal Valor { get; private set; }
 
         public ConteudoProgramatico ConteudoProgramatico { get; private set; }
         public ICollection<Aula> Aulas { get; private set; }
 
         protected Curso() { }
 
-        public Curso(string titulo, string descricao, TimeSpan cargaHoraria, string Intrutor, string nivel,ConteudoProgramatico conteudoProgramatico)
+        public Curso(string titulo, string descricao, TimeSpan cargaHoraria, string Intrutor, string nivel, decimal valor, ConteudoProgramatico conteudoProgramatico)
         {
             Titulo = titulo;
             Descricao = descricao;
             CargaHoraria = cargaHoraria;
             Instrutor = Intrutor;
             Nivel = nivel;
+            Valor = valor;
             ConteudoProgramatico = conteudoProgramatico;
-            Ativo = true;
+            Situacao = SituacaoCurso.Ativo;
             Aulas = new List<Aula>();
 
             Validar();
@@ -43,8 +46,21 @@ namespace EducationHub.Conteudo.Domain.Entidades
             Descricao = novaDescricao;
         }
 
-        public void Desativar() => Ativo = false;
-        public void Ativar() => Ativo = true;
+        public void Desativar() => Situacao = SituacaoCurso.Inativo;
+        public void Ativar() => Situacao = SituacaoCurso.Ativo;
+        public void Inativar() => Situacao = SituacaoCurso.Inativo;
+
+        public void AtualizarInformacoes(string titulo, string descricao, TimeSpan cargaHoraria, string instrutor, string nivel, decimal valor, ConteudoProgramatico conteudoProgramatico)
+        {
+            Titulo = titulo;
+            Descricao = descricao;
+            CargaHoraria = cargaHoraria;
+            Instrutor = instrutor;
+            Nivel = nivel;
+            Valor = valor;
+            ConteudoProgramatico = conteudoProgramatico;
+            Validar();
+        }
 
         private void Validar()
         {
@@ -63,6 +79,8 @@ namespace EducationHub.Conteudo.Domain.Entidades
             Validacoes.ValidarSeNulo(ConteudoProgramatico, "O conteúdo programático é obrigatório.");
 
             Validacoes.ValidarSeMenorQue(CargaHoraria.TotalMinutes, 30, "A carga horária mínima de um curso deve ser de 30 minutos.");
+            
+            Validacoes.ValidarSeMenorQue(Valor, 0, "O valor do curso não pode ser negativo.");
         }
     }
 }

@@ -16,6 +16,14 @@ namespace EducationHub.Conteudo.Data.Repository
 
         public IUnitOfWork UnitOfWork => _context;
 
+        public async Task<IEnumerable<Aula>> ObterTodosAsync()
+        {
+            return await _context.Aulas
+                .AsNoTracking()
+                .OrderBy(a => a.Titulo)
+                .ToListAsync();
+        }
+
         public async Task<IEnumerable<Aula>> ObterTodosAsync(Guid cursoId)
         {
             return await _context.Aulas
@@ -47,6 +55,15 @@ namespace EducationHub.Conteudo.Data.Repository
 
             _context.Aulas.Update(aula);
             await Task.CompletedTask;
+        }
+
+        public async Task RemoverAsync(Guid id)
+        {
+            var aula = await _context.Aulas.FindAsync(id);
+            if (aula != null)
+            {
+                _context.Aulas.Remove(aula);
+            }
         }
 
         public void Dispose()

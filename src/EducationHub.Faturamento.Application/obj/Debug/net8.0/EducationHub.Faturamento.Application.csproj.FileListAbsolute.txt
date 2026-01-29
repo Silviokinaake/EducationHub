@@ -20,3 +20,5 @@ C:\Git\MBA_Entrega_Modulo_3\EducationHub\src\EducationHub.Faturamento.Applicatio
 C:\Git\MBA_Entrega_Modulo_3\EducationHub\src\EducationHub.Faturamento.Application\obj\Debug\net8.0\refint\EducationHub.Faturamento.Application.dll
 C:\Git\MBA_Entrega_Modulo_3\EducationHub\src\EducationHub.Faturamento.Application\obj\Debug\net8.0\EducationHub.Faturamento.Application.pdb
 C:\Git\MBA_Entrega_Modulo_3\EducationHub\src\EducationHub.Faturamento.Application\obj\Debug\net8.0\ref\EducationHub.Faturamento.Application.dll
+C:\Git\MBA_Entrega_Modulo_3\EducationHub\src\EducationHub.Faturamento.Application\bin\Debug\net8.0\EducationHub.Alunos.Domain.dll
+C:\Git\MBA_Entrega_Modulo_3\EducationHub\src\EducationHub.Faturamento.Application\bin\Debug\net8.0\EducationHub.Alunos.Domain.pdb

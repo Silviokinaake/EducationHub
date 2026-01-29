@@ -14,6 +14,12 @@ namespace EducationHub.Conteudo.Application.Services
             _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
         }
 
+        public async Task<IEnumerable<AulaViewModel>> ObterTodosAsync()
+        {
+            var aulas = await _aulaRepositorio.ObterTodosAsync();
+            return _mapper.Map<IEnumerable<AulaViewModel>>(aulas);
+        }
+
         public async Task<IEnumerable<AulaViewModel>> ObterPorCursoAsync(Guid cursoId)
         {
             var aulas = await _aulaRepositorio.ObterTodosAsync(cursoId);
@@ -48,6 +54,19 @@ namespace EducationHub.Conteudo.Application.Services
             var committed = await (_aulaRepositorio as dynamic).UnitOfWork.Commit();
             if (!committed)
                 throw new InvalidOperationException("Não foi possível atualizar a aula.");
+        }
+
+        public async Task RemoverAsync(Guid id)
+        {
+            var aula = await _aulaRepositorio.ObterPorIdAsync(id);
+            if (aula == null)
+                throw new InvalidOperationException("Aula não encontrada.");
+
+            await _aulaRepositorio.RemoverAsync(id);
+
+            var committed = await (_aulaRepositorio as dynamic).UnitOfWork.Commit();
+            if (!committed)
+                throw new InvalidOperationException("Não foi possível remover a aula.");
         }
 
         public void Dispose()

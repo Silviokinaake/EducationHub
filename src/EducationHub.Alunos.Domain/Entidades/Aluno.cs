@@ -61,6 +61,18 @@ namespace EducationHub.Alunos.Domain.Entidades
             var idade = (DateTime.UtcNow - DataNascimento).TotalDays / 365.25;
             Validacoes.ValidarSeMenorQue(idade, 10, "O aluno deve ter pelo menos 10 anos.");
         }
+
+        public void GerarCertificado(Guid cursoId, DateTime dataConclusao, string tituloCurso = "Curso Concluído")
+        {
+            Validacoes.ValidarSeIgual(cursoId, Guid.Empty, "CursoId inválido.");
+            
+            // Verificar se já existe certificado para este curso
+            if (_certificados.Any(c => c.CursoId == cursoId))
+                throw new DomainException("Já existe um certificado para este curso.");
+
+            var certificado = new Certificado(Id, cursoId, tituloCurso, dataConclusao);
+            _certificados.Add(certificado);
+        }
     }
 }
 

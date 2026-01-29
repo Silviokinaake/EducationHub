@@ -42,6 +42,11 @@ namespace EducationHub.Faturamento.Data.Repository
             await Task.CompletedTask;
         }
 
+        public void Adicionar(Pagamento pagamento)
+        {
+            _context.Pagamentos.Add(pagamento);
+        }
+
         public void Dispose()
         {
             _context?.Dispose();

@@ -9,6 +9,8 @@ namespace EducationHub.Conteudo.Domain.Interfaces
         Task<Curso> ObterPorIdAsync(Guid id);
         Task AdicionarAsync(Curso curso);
         Task AtualizarAsync(Curso curso);
-
+        Task<Curso> ObterPorId(Guid id);
+        void Adicionar(Curso curso);
+        void Atualizar(Curso curso);
     }
 }

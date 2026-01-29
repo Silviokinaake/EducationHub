@@ -1,5 +1,8 @@
 ﻿using EducationHub.Alunos.Domain.Entidades;
 using EducationHub.Core.Data;
+using EducationHub.Core.DomainObjects;
+using EducationHub.Core.Mediator;
+using EducationHub.Core.Messages;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 
@@ -8,8 +11,13 @@ namespace EducationHub.Alunos.Data
 {
     public class AlunoDbContext : DbContext, IUnitOfWork
     {
-        public AlunoDbContext(DbContextOptions<AlunoDbContext> options)
-            : base(options) { }
+        private readonly IMediatorHandler _mediatorHandler;
+
+        public AlunoDbContext(DbContextOptions<AlunoDbContext> options, IMediatorHandler mediatorHandler)
+            : base(options) 
+        {
+            _mediatorHandler = mediatorHandler;
+        }
 
         public DbSet<Aluno> Alunos { get; set; }
         public DbSet<Matricula> Matriculas { get; set; }
@@ -17,6 +25,9 @@ namespace EducationHub.Alunos.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            // Ignore a classe base abstrata Event - ela não deve ser mapeada
+            modelBuilder.Ignore<EducationHub.Core.Messages.Event>();
+            
             if (Database.IsSqlServer())
             {
                 foreach (var property in modelBuilder.Model
@@ -46,7 +57,10 @@ namespace EducationHub.Alunos.Data
                 }
             }
 
-            return await base.SaveChangesAsync() > 0;
+            var sucesso = await base.SaveChangesAsync() > 0;
+            if (sucesso) await _mediatorHandler.PublicarEventos(this);
+
+            return sucesso;
         }
     }
 }

@@ -52,7 +52,7 @@ namespace EducationHub.Alunos.Application.Services
             existing.SetNome(alunoVm.Nome);
             existing.SetEmail(alunoVm.Email);
 
-            await _alunoRepositorio.AtualizarAsync(existing);
+            _alunoRepositorio.Atualizar(existing);
             return await _alunoRepositorio.UnitOfWork.Commit();
         }
 

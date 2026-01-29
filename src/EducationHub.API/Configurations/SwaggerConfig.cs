@@ -11,12 +11,12 @@ namespace EducationHub.API.Configurations
             {
                 c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
                 {
-                    Description = "Insira o token JWT desta maneira: Bearer {seu token}",
+                    Description = "Insira o token JWT (somente o token, sem 'Bearer')",
                     Name = "Authorization",
                     Scheme = "Bearer",
                     BearerFormat = "JWT",
                     In = ParameterLocation.Header,
-                    Type = SecuritySchemeType.ApiKey
+                    Type = SecuritySchemeType.Http
                 });
 
                 c.AddSecurityRequirement(new OpenApiSecurityRequirement
@@ -32,6 +32,27 @@ namespace EducationHub.API.Configurations
                         },
                         new string[] {}
                     }
+                });
+
+                // Ordenar tags no Swagger - Auth primeiro
+                c.TagActionsBy(api =>
+                {
+                    if (api.GroupName != null)
+                    {
+                        return new[] { api.GroupName };
+                    }
+
+                    var controllerName = api.ActionDescriptor.RouteValues["controller"];
+                    return new[] { controllerName ?? "Default" };
+                });
+
+                c.OrderActionsBy((apiDesc) =>
+                {
+                    var controllerName = apiDesc.ActionDescriptor.RouteValues["controller"];
+                    // Auth primeiro, depois ordem alfabética
+                    if (controllerName == "Auth")
+                        return $"0_{controllerName}";
+                    return $"1_{controllerName}";
                 });
             });
 

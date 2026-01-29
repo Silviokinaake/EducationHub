@@ -38,8 +38,14 @@
               "C:\\Git\\MBA_Entrega_Modulo_3\\EducationHub\\src\\EducationHub.Alunos.Domain\\EducationHub.Alunos.Domain.csproj": {
                 "projectPath": "C:\\Git\\MBA_Entrega_Modulo_3\\EducationHub\\src\\EducationHub.Alunos.Domain\\EducationHub.Alunos.Domain.csproj"
               },
+              "C:\\Git\\MBA_Entrega_Modulo_3\\EducationHub\\src\\EducationHub.Conteudo.Application\\EducationHub.Conteudo.Application.csproj": {
+                "projectPath": "C:\\Git\\MBA_Entrega_Modulo_3\\EducationHub\\src\\EducationHub.Conteudo.Application\\EducationHub.Conteudo.Application.csproj"
+              },
               "C:\\Git\\MBA_Entrega_Modulo_3\\EducationHub\\src\\EducationHub.Core\\EducationHub.Core.csproj": {
                 "projectPath": "C:\\Git\\MBA_Entrega_Modulo_3\\EducationHub\\src\\EducationHub.Core\\EducationHub.Core.csproj"
+              },
+              "C:\\Git\\MBA_Entrega_Modulo_3\\EducationHub\\src\\EducationHub.Faturamento.Domain\\EducationHub.Faturamento.Domain.csproj": {
+                "projectPath": "C:\\Git\\MBA_Entrega_Modulo_3\\EducationHub\\src\\EducationHub.Faturamento.Domain\\EducationHub.Faturamento.Domain.csproj"
               }
             }
           }
@@ -60,6 +66,14 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[12.1.1, )"
+            },
+            "MediatR": {
+              "target": "Package",
+              "version": "[14.0.0, )"
+            },
             "automapper": {
               "target": "Package",
               "version": "[12.0.1, )"
@@ -279,6 +293,9 @@
               "C:\\Git\\MBA_Entrega_Modulo_3\\EducationHub\\src\\EducationHub.Alunos.Application\\EducationHub.Alunos.Application.csproj": {
                 "projectPath": "C:\\Git\\MBA_Entrega_Modulo_3\\EducationHub\\src\\EducationHub.Alunos.Application\\EducationHub.Alunos.Application.csproj"
               },
+              "C:\\Git\\MBA_Entrega_Modulo_3\\EducationHub\\src\\EducationHub.Alunos.Data\\EducationHub.Alunos.Data.csproj": {
+                "projectPath": "C:\\Git\\MBA_Entrega_Modulo_3\\EducationHub\\src\\EducationHub.Alunos.Data\\EducationHub.Alunos.Data.csproj"
+              },
               "C:\\Git\\MBA_Entrega_Modulo_3\\EducationHub\\src\\EducationHub.Alunos.Domain\\EducationHub.Alunos.Domain.csproj": {
                 "projectPath": "C:\\Git\\MBA_Entrega_Modulo_3\\EducationHub\\src\\EducationHub.Alunos.Domain\\EducationHub.Alunos.Domain.csproj"
               },
@@ -330,9 +347,13 @@
               "target": "Package",
               "version": "[12.0.1, )"
             },
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[12.1.1, )"
+            },
             "MediatR": {
               "target": "Package",
-              "version": "[13.0.0, )"
+              "version": "[14.0.0, )"
             },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
@@ -692,6 +713,20 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[12.1.1, )"
+            },
+            "MediatR": {
+              "target": "Package",
+              "version": "[14.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -740,6 +775,9 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
+              "C:\\Git\\MBA_Entrega_Modulo_3\\EducationHub\\src\\EducationHub.Alunos.Domain\\EducationHub.Alunos.Domain.csproj": {
+                "projectPath": "C:\\Git\\MBA_Entrega_Modulo_3\\EducationHub\\src\\EducationHub.Alunos.Domain\\EducationHub.Alunos.Domain.csproj"
+              },
               "C:\\Git\\MBA_Entrega_Modulo_3\\EducationHub\\src\\EducationHub.Core\\EducationHub.Core.csproj": {
                 "projectPath": "C:\\Git\\MBA_Entrega_Modulo_3\\EducationHub\\src\\EducationHub.Core\\EducationHub.Core.csproj"
               },

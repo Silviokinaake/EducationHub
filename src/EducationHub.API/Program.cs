@@ -1,10 +1,12 @@
 using AutoMapper;
+using EducationHub.Alunos.Application.Commands;
 using EducationHub.Alunos.Data;
 using EducationHub.API.Configurations;
 using EducationHub.API.Settings;
 using EducationHub.Conteudo.Application.Services;
 using EducationHub.Conteudo.Data.Repository;
 using EducationHub.Conteudo.Domain.Interfaces;
+using EducationHub.Core.Mediator;
 using EducationHub.Faturamento.Application.Services;
 using EducationHub.Faturamento.Data.Repository;
 using EducationHub.Faturamento.Domain.Interfaces;
@@ -20,6 +22,15 @@ builder.AddDatabaseSelector();
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
 builder.Services.AddIdentityConfiguration(builder.Configuration);
+
+// MediatR e Mediator Handler
+builder.Services.AddMediatR(cfg => {
+    cfg.RegisterServicesFromAssembly(typeof(MatricularAlunoCommand).Assembly); // Alunos.Application
+    cfg.RegisterServicesFromAssembly(typeof(EducationHub.Conteudo.Application.Commands.CriarCursoCommand).Assembly); // Conteudo.Application
+    cfg.RegisterServicesFromAssembly(typeof(EducationHub.Faturamento.Application.Commands.RealizarPagamentoCommand).Assembly); // Faturamento.Application
+    cfg.RegisterServicesFromAssembly(typeof(Program).Assembly);
+});
+builder.Services.AddScoped<IMediatorHandler, MediatorHandler>();
 
 var mapperConfig = new MapperConfiguration(cfg =>
 {
@@ -38,17 +49,24 @@ builder.Services.AddScoped<IPagamentoServico, PagamentoServico>();
 builder.Services.AddScoped<IPagamentoRepositorio, PagamentoRepository>();
 
 builder.Services.AddScoped<EducationHub.Alunos.Domain.Repositorio.IAlunoRepositorio, EducationHub.Alunos.Data.Repository.AlunoRepository>();
+builder.Services.AddScoped<EducationHub.Alunos.Domain.Interfaces.IMatriculaRepository, EducationHub.Alunos.Data.Repository.MatriculaRepository>();
+builder.Services.AddScoped<EducationHub.Alunos.Domain.Interfaces.ICertificadoRepository, EducationHub.Alunos.Data.Repository.CertificadoRepository>();
 builder.Services.AddScoped<EducationHub.Alunos.Application.Services.IAlunoAppService, EducationHub.Alunos.Application.Services.AlunoAppService>();
 
 builder.Services.AddScoped<IPagamentoGateway, PagamentoGatewaySimulado>();
 builder.Services.AddScoped<ICardTokenizationServico, CardTokenizationService>();
-builder.Services.AddScoped<IMatriculaServico, MatriculaServicoSimulado>();
+builder.Services.AddScoped<IMatriculaServico, EducationHub.Faturamento.Application.Services.MatriculaServico>();
 
-builder.Services.AddControllers();
+builder.Services.AddControllers()
+    .AddJsonOptions(options =>
+    {
+        options.JsonSerializerOptions.Converters.Add(new System.Text.Json.Serialization.JsonStringEnumConverter());
+        options.JsonSerializerOptions.Converters.Add(new EducationHub.API.Configurations.TimeSpanJsonConverter());
+    });
 builder.Services.AddEndpointsApiExplorer();
 builder.AddSwaggerConfig();
 
-//Pegando o Token de autentica��o
+//Pegando o Token de autentica��o
 var jwtSettingsSection = builder.Configuration.GetSection("AppSettings");
 builder.Services.Configure<JwtSettings>(jwtSettingsSection);
 
@@ -94,6 +112,14 @@ using (var scope = app.Services.CreateScope())
         var context = scope.ServiceProvider.GetRequiredService<AlunoDbContext>();
     }
 }
-app.UseDbMigrationHelper();
+
+// Não executar migrations/seed durante testes
+if (!app.Environment.IsEnvironment("Test"))
+{
+    app.UseDbMigrationHelper();
+}
 
 app.Run();
+
+// Tornar Program acessível para testes de integração
+public partial class Program { }

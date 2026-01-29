@@ -3,7 +3,6 @@ using System;
 using EducationHub.Alunos.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
-using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -16,17 +15,13 @@ namespace EducationHub.Alunos.Data.Migrations.Alunos
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
-            modelBuilder
-                .HasAnnotation("ProductVersion", "8.0.0")
-                .HasAnnotation("Relational:MaxIdentifierLength", 128);
-
-            SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
+            modelBuilder.HasAnnotation("ProductVersion", "8.0.0");
 
             modelBuilder.Entity("EducationHub.Alunos.Domain.Entidades.Aluno", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("TEXT");
 
                     b.Property<DateTime>("DataNascimento")
                         .HasColumnType("datetime2");
@@ -42,7 +37,7 @@ namespace EducationHub.Alunos.Data.Migrations.Alunos
                         .HasColumnType("varchar(150)");
 
                     b.Property<Guid>("UsuarioId")
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("TEXT");
 
                     b.HasKey("Id");
 
@@ -56,10 +51,10 @@ namespace EducationHub.Alunos.Data.Migrations.Alunos
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("TEXT");
 
                     b.Property<Guid>("AlunoId")
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("Codigo")
                         .IsRequired()
@@ -67,7 +62,7 @@ namespace EducationHub.Alunos.Data.Migrations.Alunos
                         .HasColumnType("varchar(100)");
 
                     b.Property<Guid>("CursoId")
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("TEXT");
 
                     b.Property<DateTime>("DataEmissao")
                         .HasColumnType("datetime2");
@@ -91,19 +86,25 @@ namespace EducationHub.Alunos.Data.Migrations.Alunos
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("TEXT");
 
                     b.Property<Guid>("AlunoId")
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("TEXT");
 
                     b.Property<Guid>("CursoId")
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime?>("DataAtivacao")
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime?>("DataConclusao")
+                        .HasColumnType("TEXT");
 
                     b.Property<DateTime>("DataMatricula")
                         .HasColumnType("datetime2");
 
                     b.Property<int>("Status")
-                        .HasColumnType("int");
+                        .HasColumnType("INTEGER");
 
                     b.Property<decimal>("Valor")
                         .HasColumnType("decimal(18,2)");
@@ -138,19 +139,19 @@ namespace EducationHub.Alunos.Data.Migrations.Alunos
                         {
                             b1.Property<Guid>("Id")
                                 .ValueGeneratedOnAdd()
-                                .HasColumnType("uniqueidentifier");
+                                .HasColumnType("TEXT");
 
                             b1.Property<Guid>("CursoId")
-                                .HasColumnType("uniqueidentifier");
+                                .HasColumnType("TEXT");
 
                             b1.Property<DateTime>("DataUltimaAtualizacao")
                                 .HasColumnType("datetime2");
 
                             b1.Property<Guid>("MatriculaId")
-                                .HasColumnType("uniqueidentifier");
+                                .HasColumnType("TEXT");
 
                             b1.Property<double>("ProgressoPercentual")
-                                .HasColumnType("float");
+                                .HasColumnType("REAL");
 
                             b1.HasKey("Id");
 

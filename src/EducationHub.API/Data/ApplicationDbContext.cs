@@ -1,6 +1,10 @@
 ﻿using EducationHub.Conteudo.Domain.Entidades;
 using EducationHub.Alunos.Domain.Entidades;
 using EducationHub.Faturamento.Domain.Entidades;
+using EducationHub.Conteudo.Data.Mappings;
+using EducationHub.Alunos.Data.Mappings;
+using EducationHub.Faturamento.Data.Mappings;
+using EducationHub.Core.Messages;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
@@ -24,7 +28,18 @@ namespace EducationHub.API.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            // Ignorar tipos que não são entidades (classes de mensagens do MediatR)
+            modelBuilder.Ignore<Event>();
+            modelBuilder.Ignore<Message>();
+            modelBuilder.Ignore<Command>();
+            
+            // Apply configurations from current assembly
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(ApplicationDbContext).Assembly);
+            
+            // Apply configurations from Data layer assemblies
+            modelBuilder.ApplyConfigurationsFromAssembly(typeof(CursoMapping).Assembly);
+            modelBuilder.ApplyConfigurationsFromAssembly(typeof(AlunoMapping).Assembly);
+            modelBuilder.ApplyConfigurationsFromAssembly(typeof(PagamentoMapping).Assembly);
 
             foreach (var property in modelBuilder.Model.GetEntityTypes()
                 .SelectMany(e => e.GetProperties().Where(p => p.ClrType == typeof(string))))

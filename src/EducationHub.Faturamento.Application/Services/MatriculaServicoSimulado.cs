@@ -8,5 +8,15 @@ namespace EducationHub.Faturamento.Application.Services
         {
             return Task.FromResult(true);
         }
+
+        public Task<bool> AtivarMatriculaAsync(Guid preMatriculaId, decimal valorPago)
+        {
+            return Task.FromResult(true);
+        }
+
+        public Task ValidarPagamentoMatriculaAsync(Guid preMatriculaId, decimal valorPago)
+        {
+            return Task.CompletedTask;
+        }
     }
 }

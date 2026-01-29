@@ -3,7 +3,6 @@ using System;
 using EducationHub.Conteudo.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
-using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -16,17 +15,13 @@ namespace EducationHub.Conteudo.Data.Migrations.Conteudo
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
-            modelBuilder
-                .HasAnnotation("ProductVersion", "8.0.0")
-                .HasAnnotation("Relational:MaxIdentifierLength", 128);
-
-            SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
+            modelBuilder.HasAnnotation("ProductVersion", "8.0.0");
 
             modelBuilder.Entity("EducationHub.Conteudo.Domain.Entidades.Aula", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("ConteudoAula")
                         .IsRequired()
@@ -34,10 +29,10 @@ namespace EducationHub.Conteudo.Data.Migrations.Conteudo
                         .HasColumnType("varchar(5000)");
 
                     b.Property<Guid>("CursoId")
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("TEXT");
 
                     b.Property<TimeSpan>("Duracao")
-                        .HasColumnType("time");
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("MaterialDeApoio")
                         .IsRequired()
@@ -60,13 +55,10 @@ namespace EducationHub.Conteudo.Data.Migrations.Conteudo
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<bool>("Ativo")
-                        .HasColumnType("bit");
+                        .HasColumnType("TEXT");
 
                     b.Property<TimeSpan>("CargaHoraria")
-                        .HasColumnType("time");
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("Descricao")
                         .IsRequired()
@@ -83,10 +75,16 @@ namespace EducationHub.Conteudo.Data.Migrations.Conteudo
                         .HasMaxLength(50)
                         .HasColumnType("varchar(50)");
 
+                    b.Property<int>("Situacao")
+                        .HasColumnType("INTEGER");
+
                     b.Property<string>("Titulo")
                         .IsRequired()
                         .HasMaxLength(250)
                         .HasColumnType("varchar(250)");
+
+                    b.Property<decimal>("Valor")
+                        .HasColumnType("TEXT");
 
                     b.HasKey("Id");
 
@@ -98,7 +96,6 @@ namespace EducationHub.Conteudo.Data.Migrations.Conteudo
                     b.HasOne("EducationHub.Conteudo.Domain.Entidades.Curso", "Curso")
                         .WithMany("Aulas")
                         .HasForeignKey("CursoId")
-                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Curso");
@@ -109,7 +106,7 @@ namespace EducationHub.Conteudo.Data.Migrations.Conteudo
                     b.OwnsOne("EducationHub.Conteudo.Domain.Entidades.ConteudoProgramatico", "ConteudoProgramatico", b1 =>
                         {
                             b1.Property<Guid>("CursoId")
-                                .HasColumnType("uniqueidentifier");
+                                .HasColumnType("TEXT");
 
                             b1.Property<string>("Bibliografia")
                                 .IsRequired()

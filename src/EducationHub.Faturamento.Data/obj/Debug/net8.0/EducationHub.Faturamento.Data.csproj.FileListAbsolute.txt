@@ -2,10 +2,12 @@ C:\Git\MBA_Entrega_Modulo_3\EducationHub\src\EducationHub.Faturamento.Data\bin\D
 C:\Git\MBA_Entrega_Modulo_3\EducationHub\src\EducationHub.Faturamento.Data\bin\Debug\net8.0\EducationHub.Faturamento.Data.runtimeconfig.json
 C:\Git\MBA_Entrega_Modulo_3\EducationHub\src\EducationHub.Faturamento.Data\bin\Debug\net8.0\EducationHub.Faturamento.Data.dll
 C:\Git\MBA_Entrega_Modulo_3\EducationHub\src\EducationHub.Faturamento.Data\bin\Debug\net8.0\EducationHub.Faturamento.Data.pdb
+C:\Git\MBA_Entrega_Modulo_3\EducationHub\src\EducationHub.Faturamento.Data\bin\Debug\net8.0\EducationHub.Conteudo.Domain.dll
 C:\Git\MBA_Entrega_Modulo_3\EducationHub\src\EducationHub.Faturamento.Data\bin\Debug\net8.0\EducationHub.Core.dll
 C:\Git\MBA_Entrega_Modulo_3\EducationHub\src\EducationHub.Faturamento.Data\bin\Debug\net8.0\EducationHub.Faturamento.Domain.dll
 C:\Git\MBA_Entrega_Modulo_3\EducationHub\src\EducationHub.Faturamento.Data\bin\Debug\net8.0\EducationHub.Core.pdb
 C:\Git\MBA_Entrega_Modulo_3\EducationHub\src\EducationHub.Faturamento.Data\bin\Debug\net8.0\EducationHub.Faturamento.Domain.pdb
+C:\Git\MBA_Entrega_Modulo_3\EducationHub\src\EducationHub.Faturamento.Data\bin\Debug\net8.0\EducationHub.Conteudo.Domain.pdb
 C:\Git\MBA_Entrega_Modulo_3\EducationHub\src\EducationHub.Faturamento.Data\obj\Debug\net8.0\EducationHub.Faturamento.Data.csproj.AssemblyReference.cache
 C:\Git\MBA_Entrega_Modulo_3\EducationHub\src\EducationHub.Faturamento.Data\obj\Debug\net8.0\EducationHub.Faturamento.Data.GeneratedMSBuildEditorConfig.editorconfig
 C:\Git\MBA_Entrega_Modulo_3\EducationHub\src\EducationHub.Faturamento.Data\obj\Debug\net8.0\EducationHub.Faturamento.Data.AssemblyInfoInputs.cache
@@ -18,5 +20,3 @@ C:\Git\MBA_Entrega_Modulo_3\EducationHub\src\EducationHub.Faturamento.Data\obj\D
 C:\Git\MBA_Entrega_Modulo_3\EducationHub\src\EducationHub.Faturamento.Data\obj\Debug\net8.0\EducationHub.Faturamento.Data.pdb
 C:\Git\MBA_Entrega_Modulo_3\EducationHub\src\EducationHub.Faturamento.Data\obj\Debug\net8.0\EducationHub.Faturamento.Data.genruntimeconfig.cache
 C:\Git\MBA_Entrega_Modulo_3\EducationHub\src\EducationHub.Faturamento.Data\obj\Debug\net8.0\ref\EducationHub.Faturamento.Data.dll
-C:\Git\MBA_Entrega_Modulo_3\EducationHub\src\EducationHub.Faturamento.Data\bin\Debug\net8.0\EducationHub.Conteudo.Domain.dll
-C:\Git\MBA_Entrega_Modulo_3\EducationHub\src\EducationHub.Faturamento.Data\bin\Debug\net8.0\EducationHub.Conteudo.Domain.pdb

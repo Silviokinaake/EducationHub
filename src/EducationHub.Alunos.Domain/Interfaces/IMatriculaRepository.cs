@@ -1,11 +1,13 @@
 ﻿using EducationHub.Alunos.Domain.Entidades;
+using EducationHub.Core.Data;
 
 namespace EducationHub.Alunos.Domain.Interfaces
 {
-    public interface IMatriculaRepository
+    public interface IMatriculaRepository : IRepository<Matricula>
     {
-        Task AdicionarAsync(Matricula mtricula);
-        void AtualizarAsync(Matricula mtricula);
+        Task<Matricula> ObterPorId(Guid id);
+        Task AdicionarAsync(Matricula matricula);
+        void Atualizar(Matricula matricula);
         Task CommitAsync();
     }
 }

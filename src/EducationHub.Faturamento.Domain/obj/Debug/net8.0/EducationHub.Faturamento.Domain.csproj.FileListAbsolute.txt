@@ -1,7 +1,9 @@
 C:\Git\MBA_Entrega_Modulo_3\EducationHub\src\EducationHub.Faturamento.Domain\bin\Debug\net8.0\EducationHub.Faturamento.Domain.deps.json
 C:\Git\MBA_Entrega_Modulo_3\EducationHub\src\EducationHub.Faturamento.Domain\bin\Debug\net8.0\EducationHub.Faturamento.Domain.dll
 C:\Git\MBA_Entrega_Modulo_3\EducationHub\src\EducationHub.Faturamento.Domain\bin\Debug\net8.0\EducationHub.Faturamento.Domain.pdb
+C:\Git\MBA_Entrega_Modulo_3\EducationHub\src\EducationHub.Faturamento.Domain\bin\Debug\net8.0\EducationHub.Conteudo.Domain.dll
 C:\Git\MBA_Entrega_Modulo_3\EducationHub\src\EducationHub.Faturamento.Domain\bin\Debug\net8.0\EducationHub.Core.dll
+C:\Git\MBA_Entrega_Modulo_3\EducationHub\src\EducationHub.Faturamento.Domain\bin\Debug\net8.0\EducationHub.Conteudo.Domain.pdb
 C:\Git\MBA_Entrega_Modulo_3\EducationHub\src\EducationHub.Faturamento.Domain\bin\Debug\net8.0\EducationHub.Core.pdb
 C:\Git\MBA_Entrega_Modulo_3\EducationHub\src\EducationHub.Faturamento.Domain\obj\Debug\net8.0\EducationHub.Faturamento.Domain.csproj.AssemblyReference.cache
 C:\Git\MBA_Entrega_Modulo_3\EducationHub\src\EducationHub.Faturamento.Domain\obj\Debug\net8.0\EducationHub.Faturamento.Domain.GeneratedMSBuildEditorConfig.editorconfig
@@ -14,5 +16,3 @@ C:\Git\MBA_Entrega_Modulo_3\EducationHub\src\EducationHub.Faturamento.Domain\obj
 C:\Git\MBA_Entrega_Modulo_3\EducationHub\src\EducationHub.Faturamento.Domain\obj\Debug\net8.0\refint\EducationHub.Faturamento.Domain.dll
 C:\Git\MBA_Entrega_Modulo_3\EducationHub\src\EducationHub.Faturamento.Domain\obj\Debug\net8.0\EducationHub.Faturamento.Domain.pdb
 C:\Git\MBA_Entrega_Modulo_3\EducationHub\src\EducationHub.Faturamento.Domain\obj\Debug\net8.0\ref\EducationHub.Faturamento.Domain.dll
-C:\Git\MBA_Entrega_Modulo_3\EducationHub\src\EducationHub.Faturamento.Domain\bin\Debug\net8.0\EducationHub.Conteudo.Domain.dll
-C:\Git\MBA_Entrega_Modulo_3\EducationHub\src\EducationHub.Faturamento.Domain\bin\Debug\net8.0\EducationHub.Conteudo.Domain.pdb

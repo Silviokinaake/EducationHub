@@ -1,6 +1,7 @@
 ﻿using System;
 using EducationHub.Core.DomainObjects;
 using EducationHub.Faturamento.Domain.Enums;
+using EducationHub.Faturamento.Domain.Events;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace EducationHub.Faturamento.Domain.Entidades
@@ -48,6 +49,9 @@ namespace EducationHub.Faturamento.Domain.Entidades
 
             Status = StatusPagamentoEnum.Confirmado;
             DataPagamento = DateTime.UtcNow;
+            
+            // Publicar evento de domínio
+            AdicionarEvento(new PagamentoRealizadoEvent(Id, AlunoId, PreMatriculaId, Valor));
         }
 
         public void Rejeitar(string motivo)
@@ -56,6 +60,9 @@ namespace EducationHub.Faturamento.Domain.Entidades
                 throw new DomainException("O pagamento já foi rejeitado.");
 
             Status = StatusPagamentoEnum.Rejeitado;
+            
+            // Publicar evento de domínio
+            AdicionarEvento(new PagamentoRejeitadoEvent(Id, AlunoId, PreMatriculaId, motivo));
         }
 
         public void AplicarTokenCartao(string token, string numeroMascarado)

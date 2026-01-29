@@ -16,6 +16,9 @@ namespace EducationHub.Conteudo.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            // Ignore a classe base abstrata Event - ela não deve ser mapeada
+            modelBuilder.Ignore<EducationHub.Core.Messages.Event>();
+            
             // Define padrão de colunas string como varchar(100)
             foreach (var property in modelBuilder.Model
                          .GetEntityTypes()
