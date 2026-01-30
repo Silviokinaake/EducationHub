@@ -191,7 +191,7 @@ O usuário logado (interativo) corresponde à persona do negócio (Aluno ou Admi
 
 1. **Clone o Repositório**:
 ```bash
-git clone <url-do-repositorio>
+git clone <https://github.com/Silviokinaake/EducationHub.git>
 cd EducationHub
 ```
 
@@ -352,76 +352,17 @@ O projeto está configurado para escolher automaticamente entre SQLite (desenvol
 - ✅ Testes de integração planejados
 - ✅ Cobertura de testes > 80% (meta)
 
-## 📚 Próximos Passos
-
-- [ ] Completar implementação de todos os Commands e Queries com MediatR
-- [ ] Implementar Domain Events para comunicação entre BCs
-- [ ] Adicionar Event Handlers para integração entre contextos
-- [ ] Completar testes de integração para todos os casos de uso
-- [ ] Implementar logging estruturado (Serilog/Elmah.io)
-- [ ] Adicionar validações avançadas de negócio
-- [ ] Implementar cache para queries frequentes
-- [ ] Adicionar suporte a paginação nos endpoints
-- [ ] Implementar health checks
 
 ## 📄 Licença
 
 Este projeto é parte de um curso acadêmico (MBA DevXpert Full Stack .NET) e não aceita contribuições externas.
-
----
-
-**Nota**: O projeto segue as melhores práticas de desenvolvimento com foco em Clean Architecture, SOLID, DDD e qualidade de código.
-  - Filters/           -> Filtros globais de exceção e autorização
-  - MigrationHelper/   -> Utilitários para migrações automáticas e criação do banco
-  - Settings/          -> Classes de configuração e AppSettings
-  - ViewModels/        -> Modelos de entrada e saída de dados (DTOs)
-
-
+ 
 ## Funcionalidades Implementadas
 
-- ** Autenticação e Autorização: Implementação de login e cadastro utilizando ASP.NET Identity com JWT, permitindo autenticação segura de usuários.
-
-- ** Integração com Aluno: Criação automática de um registro na tabela Aluno ao cadastrar um novo usuário, garantindo o vínculo entre a identidade e a persona do sistema.
-
-- ** API RESTful: Estrutura inicial configurada para exposição de endpoints e integração entre os bounded contexts.
-
-- **Configuração de Banco de Dados: Persistência de dados com Entity Framework Core, compatível com SQL Server e SQLite.
-
-## **Como Executar o Projeto**
-
-### **Pré-requisitos**
-
-- .NET SDK 8.0 ou superior
-- SQL Server
-- Visual Studio 2022 ou superior (ou qualquer IDE de sua preferência)
-- Git
-
-### **Passos para Execução**
-
-1. **Clone o Repositório:**
-   
-   - `https://github.com/Silviokinaake/EducationHub.git`
-
-2. **Configuração do Banco de Dados:**
-   
-   - No arquivo appsettings.json, você pode escolher qual banco de dados utilizar
-   
-   - SQLite (padrão) A string de conexão para SQLite já está configurada por padrão. O banco de dados será gerado automaticamente.
-	
-   - Caso prefira usar o SQL Server, altere a string de conexão.
-
-4. **Executar a API:**
-   
-   - No Visual Studio, selecione o projeto API como projeto de inicialização.
-   
-   - Execute a aplicação.
-
-
-## Documentação da API
-
-A documentação da API está disponível através do Swagger. Após iniciar a API, acesse a documentação em:
-
-http://localhost:5137/swagger/index.html
+- **Autenticação e Autorização**: Implementação de login e cadastro utilizando ASP.NET Identity com JWT, permitindo autenticação segura de usuários.
+- **Integração com Aluno**: Criação automática de um registro na tabela Aluno ao cadastrar um novo usuário, garantindo o vínculo entre a identidade e a persona do sistema.
+- **API RESTful**: Estrutura inicial configurada para exposição de endpoints e integração entre os bounded contexts.
+- **Configuração de Banco de Dados**: Persistência de dados com Entity Framework Core, compatível com SQL Server e SQLite.
 
 
 
